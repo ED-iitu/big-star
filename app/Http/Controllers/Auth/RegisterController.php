@@ -81,11 +81,20 @@ class RegisterController extends Controller
     {
         try {
             $registeredFrom = $request->invite_code ?? null;
+            $from = null;
+
+            if ($registeredFrom !== null) {
+                $user = User::where('invite_code', $registeredFrom)->first();
+
+                if ($user instanceof User) {
+                    $from = $user->id;
+                }
+            }
             $user           = User::create([
                 'name'            => $request->name,
                 'phone'           => $request->phone,
                 'email'           => $request->email,
-                'registered_from' => $registeredFrom,
+                'registered_from' => $from,
                 'password'        => Hash::make($request->password),
                 'invite_code'     => $this->generateInviteCode()
             ]);
