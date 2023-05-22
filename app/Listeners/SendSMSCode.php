@@ -17,7 +17,6 @@ class SendSMSCode implements ShouldQueue
 
         $smsCenter->sendSMS($user->phone, $smsCode);
 
-        $smsCode = 1234;
         $user->sms_code = $smsCode;
         $user->save();
 
