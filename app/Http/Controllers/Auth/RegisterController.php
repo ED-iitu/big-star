@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 
 class RegisterController extends Controller
@@ -99,6 +100,7 @@ class RegisterController extends Controller
 
             return redirect()->route('verify.sms');
         } catch (\Throwable $exception) {
+            Log::info($exception->getMessage());
             if ($exception instanceof QueryException) {
                 $errorMessage = 'Вы уже зарегистрированы.';
                 Session::flash('error', $errorMessage);
