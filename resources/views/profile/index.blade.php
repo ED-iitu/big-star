@@ -33,7 +33,7 @@
                     <a class="list-group-item list-group-item-action" data-toggle="list" href="#transaction" role="tab">
                         Транзакции
                     </a>
-                    @if(Auth::user->role_id == \App\User::ROLE_PRESENTER)
+                    @if(Auth::user()->role_id == \App\User::ROLE_PRESENTER)
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#transaction" role="tab">
                             Вывод денег
                         </a>
