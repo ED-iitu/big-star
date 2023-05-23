@@ -4,6 +4,16 @@
 @section('content')
 
 <div class="container p-0">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <h1 class="h3 mb-3">{{Auth::user()->name}}</h1>
     <div class="row">
         <div class="col-md-5 col-xl-4">
@@ -36,26 +46,27 @@
                             <h5 class="card-title mb-0">Профиль</h5>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="{{route('profile.updateProfile')}}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputUsername">ФИО</label>
-                                            <input type="text" class="form-control" id="inputUsername" placeholder="ФИО" value="{{Auth::user()->name}}">
+                                            <input type="text" class="form-control" id="inputUsername" placeholder="ФИО" name="name" value="{{Auth::user()->name}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputUsername">E-mail</label>
-                                            <input type="text" class="form-control" id="inputUsername" placeholder="E-mail" value="{{Auth::user()->email}}">
+                                            <input type="text" class="form-control" id="inputUsername" name="email" placeholder="E-mail" value="{{Auth::user()->email}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputUsername">Телефон</label>
-                                            <input type="text" class="form-control" id="inputUsername" placeholder="Телефон" value="{{Auth::user()->phone}}">
+                                            <input type="text" class="form-control" id="inputUsername" name="phone" placeholder="Телефон" value="{{Auth::user()->phone}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="text-center">
-                                            <img alt="Andrew Jones" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle img-responsive mt-2" width="128" height="128">
-                                            <input type="file">
+                                            <img alt="Andrew Jones" src="{{asset(Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                            <input type="file" name="avatar">
                                         </div>
                                     </div>
                                 </div>
@@ -74,12 +85,17 @@
                             <form>
                                 <div class="form-group">
                                     <label for="inputEmail4">Ссылка для приглашения</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Ссылка для приглашения" value="https://big-star.kz/register?invite_code={{Auth::user()->invite_code}}">
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Ссылка для приглашения" value="https://big-star.kz/register?invite_code={{Auth::user()->invite_code}}">
+                                    <small>Скопируйте и отправте друзьям!</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Приглашен пользователем</label>
+                                    <input type="text" class="form-control" id="inputEmail4" value="{{$registeredFrom->name ?? null}}" readonly>
                                     <small>Скопируйте и отправте друзьям!</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail4">Ваш баланс</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{Auth::user()->wallet->amount}}" readonly>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{ (Auth::user()->role_id == 2) ? '0' : Auth::user()->wallet->amount }}" readonly>
                                 </div>
                             </form>
 
@@ -93,18 +109,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Смена пароля</h5>
 
-                            <form>
+                            <form method="POST" action="{{route('profile.updatePassword')}}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="inputPasswordCurrent">Текущий пароль</label>
-                                    <input type="password" class="form-control" id="inputPasswordCurrent">
+                                    <input type="password" class="form-control" id="inputPasswordCurrent" name="currentPassword">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPasswordNew">Новый пароль</label>
-                                    <input type="password" class="form-control" id="inputPasswordNew">
+                                    <input type="password" class="form-control" id="inputPasswordNew" name="password">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPasswordNew2">Подтвердите новый пароль</label>
-                                    <input type="password" class="form-control" id="inputPasswordNew2">
+                                    <input type="password" class="form-control" id="inputPasswordNew2" name="password_confirmation">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Сохранить</button>
                             </form>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ResetPasswordController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,14 @@ Route::get('/', function () {
 
 Route::get('/verify-sms-code', 'Auth\VerificationController@showSMSCodeForm')->name('verify.sms');
 Route::post('/verify-sms-code', 'Auth\VerificationController@verifySMSCode');
+
+Route::post('/user/update-password', [\App\Http\Controllers\UserController::class, 'updatePassword'])->name('profile.updatePassword');
+Route::post('/user/update-profile', [\App\Http\Controllers\UserController::class, 'updateProfileData'])->name('profile.updateProfile');
+
+Route::get('/password/resetBySms', [ResetPasswordController::class, 'showResetForm'])->name('password.resetBySms');
+Route::post('/password/send-sms-code', [ResetPasswordController::class, 'sendResetCode'])->name('password.sendResetSmsCode');
+Route::get('/password/showResetPasswordForm', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.showResetPasswordSmsForm');
+Route::post('/password/resetByCode', [ResetPasswordController::class, 'resetPassword'])->name('password.resetPasswordBySms');
 
 Auth::routes();
 
