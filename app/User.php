@@ -12,7 +12,7 @@ class User extends \TCG\Voyager\Models\User
 
     public const ROLE_ADMIN = 1;
     public const ROLE_USER = 2;
-    public const ROLE_PRESENTER = 1;
+    public const ROLE_PRESENTER = 3;
 
     /**
      * The attributes that are mass assignable.
