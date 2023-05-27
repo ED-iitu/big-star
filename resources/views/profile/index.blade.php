@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="container p-0">
+<div class="container p-0 mt-5 pt-5">
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -34,7 +34,7 @@
                         Транзакции
                     </a>
                     @if(Auth::user()->role_id == \App\User::ROLE_PRESENTER)
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#transaction" role="tab">
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#withdraw" role="tab">
                             Вывод денег
                         </a>
                     @endif
@@ -183,6 +183,37 @@
                                     </tr>
                                     </tbody></table>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="withdraw" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Вывод денег</h5>
+
+                            <form method="POST" action="{{route('user.createWithdraw')}}">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Номер карты</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="card_no">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Наименование банка</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="bank_title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Телефон</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Сумма</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="amount">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Создать заявку</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\User;
+use App\WithdrawRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -63,5 +64,27 @@ class UserController
 
         return redirect()->back()->with('success', 'Данные обновлены');
 
+    }
+
+    /**
+     * Создаем заявку на вывод
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function createWithdrawRequest(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $withdraw = new WithdrawRequest();
+
+        $withdraw->user_id    = Auth::user()->id;
+        $withdraw->card_no    = $request->card_no;
+        $withdraw->phone      = $request->phone;
+        $withdraw->bank_title = $request->bank_title;
+        $withdraw->amount     = $request->amount;
+
+        $withdraw->save();
+
+        return redirect()->back()->with('success', 'Заявка на вывод создана');
     }
 }

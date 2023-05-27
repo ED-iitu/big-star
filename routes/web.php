@@ -24,6 +24,7 @@ Route::post('/verify-sms-code', 'Auth\VerificationController@verifySMSCode');
 
 Route::post('/user/update-password', [\App\Http\Controllers\UserController::class, 'updatePassword'])->name('profile.updatePassword');
 Route::post('/user/update-profile', [\App\Http\Controllers\UserController::class, 'updateProfileData'])->name('profile.updateProfile');
+Route::post('/user/create-withdraw', [\App\Http\Controllers\UserController::class, 'createWithdrawRequest'])->name('user.createWithdraw');
 
 Route::get('/password/resetBySms', [ResetPasswordController::class, 'showResetForm'])->name('password.resetBySms');
 Route::post('/password/send-sms-code', [ResetPasswordController::class, 'sendResetCode'])->name('password.sendResetSmsCode');

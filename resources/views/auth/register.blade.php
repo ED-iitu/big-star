@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container pt-5 mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -72,6 +72,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     Создать аккаунт
                                 </button>
+
+                                @if (Route::has('login'))
+                                    <a class="btn btn-link" href="{{ route('login') }}">
+                                        Уже есть аккаунт
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>
