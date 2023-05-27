@@ -594,56 +594,40 @@
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="box">
-                            <h3>Free</h3>
-                            <h4><sup>$</sup>0<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li class="na">Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
+                    @if(!empty($packages))
+                        @foreach($packages as $package)
+                            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="box">
+                                    <h3>{{$package->title}}</h3>
+                                    <h4>{{$package->price}} <sup> KZT</sup></h4>
+                                    <ul>
+                                        <li>{{$package->description}}</li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <a href="#" class="btn-buy">Купить</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
 
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="box featured">
-                            <h3>Business</h3>
-                            <h4><sup>$</sup>19<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="box">
-                            <h3>Developer</h3>
-                            <h4><sup>$</sup>29<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">--}}
+{{--                        <div class="box featured">--}}
+{{--                            <h3>Business</h3>--}}
+{{--                            <h4><sup>$</sup>19<span> / month</span></h4>--}}
+{{--                            <ul>--}}
+{{--                                <li>Aida dere</li>--}}
+{{--                                <li>Nec feugiat nisl</li>--}}
+{{--                                <li>Nulla at volutpat dola</li>--}}
+{{--                                <li>Pharetra massa</li>--}}
+{{--                                <li class="na">Massa ultricies mi</li>--}}
+{{--                            </ul>--}}
+{{--                            <div class="btn-wrap">--}}
+{{--                                <a href="#" class="btn-buy">Buy Now</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                 </div>
 
