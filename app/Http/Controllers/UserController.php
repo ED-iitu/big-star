@@ -58,10 +58,10 @@ class UserController
                 $filename = uniqid() . '.' . $avatar->getClientOriginalExtension();
 
                 // Сохраняем файл аватара в публичной директории (например, public/avatars)
-                $avatar->move(public_path('users'), $filename);
+                $avatar->move(public_path('storage/users'), $filename);
 
                 // Обновляем путь к аватару в базе данных для текущего пользователя
-                $user->avatar = '/users/' . $filename;
+                $user->avatar = 'users/' . $filename;
                 $user->save();
             }
 
