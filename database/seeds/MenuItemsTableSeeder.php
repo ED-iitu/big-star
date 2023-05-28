@@ -173,5 +173,25 @@ class MenuItemsTableSeeder extends Seeder
                 'order'      => 14,
             ])->save();
         }
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id'    => $menu->id,
+            'title'      => 'Сделать бекап базы',
+            'url'        => '',
+            'route'      => 'backup.create',
+            'target'     => '_self',
+            'icon_class' => 'voyager-database',
+            'color'      => null,
+            'parent_id'  => null,
+            'order'      => 99,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-settings',
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 14,
+            ])->save();
+        }
     }
 }

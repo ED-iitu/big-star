@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackupController;
 use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::get('/password/resetBySms', [ResetPasswordController::class, 'showResetFo
 Route::post('/password/send-sms-code', [ResetPasswordController::class, 'sendResetCode'])->name('password.sendResetSmsCode');
 Route::get('/password/showResetPasswordForm', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.showResetPasswordSmsForm');
 Route::post('/password/resetByCode', [ResetPasswordController::class, 'resetPassword'])->name('password.resetPasswordBySms');
+Route::get('/backup', [BackupController::class, 'createBackup'])->name('backup.create');
 
 Auth::routes();
 
