@@ -43,31 +43,34 @@ class UserController
 
     public function updateProfileData(Request $request)
     {
-        $request->validate([
-            'avatar' => 'required|image|max:2048', // Максимальный размер файла 2МБ и тип файла - изображение
-        ]);
+        try {
+            $request->validate([
+                'avatar' => 'required|image|max:2048', // Максимальный размер файла 2МБ и тип файла - изображение
+            ]);
 
-        $user = Auth::user();
+            $user = Auth::user();
 
-        $avatar = $request->file('avatar');
+            $avatar = $request->file('avatar');
 
-        // Проверяем, что файл был загружен успешно
-        if ($avatar) {
-            // Генерируем уникальное имя файла
-            $filename = uniqid() . '.' . $avatar->getClientOriginalExtension();
+            // Проверяем, что файл был загружен успешно
+            if ($avatar) {
+                // Генерируем уникальное имя файла
+                $filename = uniqid() . '.' . $avatar->getClientOriginalExtension();
 
-            // Сохраняем файл аватара в публичной директории (например, public/avatars)
-            $avatar->move(public_path('avatars'), $filename);
+                // Сохраняем файл аватара в публичной директории (например, public/avatars)
+                $avatar->move(public_path('avatars'), $filename);
 
-            // Обновляем путь к аватару в базе данных для текущего пользователя
-            $user->avatar = 'avatars/' . $filename;
-            $user->save();
+                // Обновляем путь к аватару в базе данных для текущего пользователя
+                $user->avatar = 'avatars/' . $filename;
+                $user->save();
+            }
+
+            $user->update($request->all());
+
+            return redirect()->back()->with('success', 'Данные обновлены');
+        } catch (\Throwable $e) {
+            return redirect()->back()->with('error', 'Произошла ошибка при обновлении профиля');
         }
-
-        $user->update($request->all());
-
-        return redirect()->back()->with('success', 'Данные обновлены');
-
     }
 
     /**
