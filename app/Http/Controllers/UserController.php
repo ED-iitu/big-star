@@ -61,7 +61,7 @@ class UserController
                 $avatar->move(public_path('storage/users'), $filename);
 
                 // Обновляем путь к аватару в базе данных для текущего пользователя
-                $user->avatar = 'users/' . $filename;
+                $user->avatar = 'storage/users/' . $filename;
                 $user->save();
             }
 
