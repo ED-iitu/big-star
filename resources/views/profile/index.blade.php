@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="text-center">
-                                            <img alt="Andrew Jones" src="{{asset(Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                            <img alt="Andrew Jones" src="{{asset('/storage/' . Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
                                             <input type="file" name="avatar">
                                         </div>
                                     </div>
