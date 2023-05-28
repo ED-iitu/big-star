@@ -43,6 +43,10 @@ class UserController
 
     public function updateProfileData(Request $request)
     {
+        $request->validate([
+            'avatar' => 'required|image|max:2048', // Максимальный размер файла 2МБ и тип файла - изображение
+        ]);
+
         $user = Auth::user();
 
         $avatar = $request->file('avatar');
