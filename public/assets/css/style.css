@@ -103,6 +103,63 @@ h6 {
   }
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-btn {
+  width: 50%;
+  max-width: 200px;
+  color: #fff;
+  padding: 10px;
+  margin: 20px 20px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  margin-right: 7px;
+}
+.app-btn p {
+  margin-bottom: 0!important;
+}
+.app-btn .big-txt {
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-block {
+    display: block;
+    position: relative;
+    left: 19%;
+  }
+  .app-btn {
+    max-width: 100%;
+    width: 250px;
+    margin: 10px 0px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -479,6 +536,7 @@ section {
 }
 
 .section-title h2 {
+  text-align: left;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -491,11 +549,10 @@ section {
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 75px;
   height: 3px;
   background: #aabbd7;
   bottom: 0;
-  left: calc(50% - 25px);
 }
 
 .section-title p {
