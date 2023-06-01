@@ -61,6 +61,28 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="registered_from">Кем приглашен </label>
+                                @if($dataTypeContent->registered_from > 0)
+                                    <a href="https://big-star.kz/admin/users/{{$dataTypeContent->registered_from}}" target="_blank">Ссылка на пользователя который пригласил</a>
+                                @else
+                                    <p>Нет приглашенного пользователя</p>
+                                @endif
+                                <select class="form-control select2" id="registered_from" name="registered_from">
+                                    @foreach (\App\User::getAll() as $user)
+                                        <option value="{{ $user->id }}"
+                                            {{ ($user->id == $dataTypeContent->registered_from ? 'selected' : '') }}>{{ $user->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="invite_code">Код приглашения</label>
+                                <input type="text" class="form-control" id="invite_code" name="invite_code"
+                                       placeholder="Код приглашения"
+                                       value="{{ old('invite_code', $dataTypeContent->invite_code ?? '') }}">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="password">{{ __('voyager::generic.password') }}</label>
                                 @if(isset($dataTypeContent->password))
                                     <br>

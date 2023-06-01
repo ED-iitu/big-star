@@ -51,4 +51,9 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasOne(Wallet::class);
     }
+
+    public static function getAll()
+    {
+        return User::all();
+    }
 }
