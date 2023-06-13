@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pocket;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\Post;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $packages = Pocket::all();
+        $news     = Post::all();
 
-        return view('welcome', compact('packages'));
+        return view('welcome', compact('packages', 'news'));
     }
 }

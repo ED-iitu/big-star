@@ -223,9 +223,39 @@
                 </div>
 
             </div>
-        </section><!-- End Pricing Section -->
+        </section>
 
 
+        <section id="pricing" class="pricing section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Новости</h2>
+                </div>
+
+                <div class="row">
+
+                    @if(!empty($news))
+                        @foreach($news as $post)
+                            <div class="col-lg-4 col-md-6 mt-5" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="box">
+                                    <img src="{{asset('/storage/'. $post->image)}}" alt="" width="350px" height="350px">
+                                    <h3>{{$post->title}}</h3>
+                                    <ul>
+                                        <li>{!! $post->body !!}</li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <a href="" class="btn-buy">Смотреть</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+
+                </div>
+
+            </div>
+        </section>
 
         <!-- ======= Frequently Asked Questions Section ======= -->
         <section id="faq" class="faq">
