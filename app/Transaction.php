@@ -20,4 +20,32 @@ class Transaction extends Model
         'status',
         'sum'
     ];
+
+    public function getStatusAttribute($status)
+    {
+        switch ($status) {
+            case 0:
+                return 'Создан';
+            case 1:
+                return "Успешно";
+            case 2:
+                return "Ошибка";
+            default:
+                return "Создан";
+        }
+    }
+
+    public function getTypeAttribute($type)
+    {
+        switch ($type) {
+            case 1:
+                return 'Покупка';
+            case 2:
+                return "Вывод";
+            case 3:
+                return "Оплата за приглашения";
+            default:
+                return "Покупка";
+        }
+    }
 }

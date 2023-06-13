@@ -57,6 +57,11 @@ class User extends \TCG\Voyager\Models\User
         return User::all();
     }
 
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
     public static function getPresenters()
     {
         return User::where('role_id', User::ROLE_PRESENTER)->get();
@@ -64,6 +69,6 @@ class User extends \TCG\Voyager\Models\User
 
     public function pockets()
     {
-        return $this->hasMany(UserPocket::class);
+        return $this->belongsToMany(Pocket::class, 'user_pockets');
     }
 }

@@ -94,11 +94,21 @@
                                 <div class="form-group">
                                     <label for="inputEmail4">Приглашен пользователем</label>
                                     <input type="text" class="form-control" id="inputEmail4" value="{{$registeredFrom->name ?? null}}" readonly>
-                                    <small>Скопируйте и отправте друзьям!</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail4">Ваш баланс</label>
                                     <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{ (Auth::user()->role_id == 2) ? '0' : Auth::user()->wallet->amount }}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <h2>Ваши купленные пакеты</h2>
+
+                                    @if(count(Auth::user()->pockets) > 0)
+                                        @foreach(Auth::user()->pockets as $key => $pocket)
+                                            <p>{{$key + 1}}: {{$pocket->title}}</p>
+                                        @endforeach
+                                    @else
+                                        <p>У вас нет купленных пакетов</p>
+                                    @endif
                                 </div>
                             </form>
 
@@ -146,38 +156,52 @@
                                         <th>Дата</th>
                                         <th>Статус</th>
                                     </tr>
-                                    <tr>
-                                        <td>Покупка пакета</td>
-                                        <td class="align-middle">
-                                            2000
-                                        </td>
-                                        <td>2018-01-20</td>
-                                        <td>Куплен</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Покупка пакета</td>
-                                        <td class="align-middle">
-                                            2000
-                                        </td>
-                                        <td>2018-01-20</td>
-                                        <td>Куплен</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Поступление от приглашенного друга</td>
-                                        <td class="align-middle">
-                                            250
-                                        </td>
-                                        <td>2018-01-20</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Вывод</td>
-                                        <td class="align-middle">
-                                            2000
-                                        </td>
-                                        <td>2018-01-20</td>
-                                        <td>Выведен</td>
-                                    </tr>
+                                    @if(count(Auth::user()->transactions) > 0)
+                                        @foreach(Auth::user()->transactions as $transaction)
+                                            <tr>
+                                                <td>{{$transaction->type}}</td>
+                                                <td class="align-middle">
+                                                    {{$transaction->sum}}
+                                                </td>
+                                                <td>{{$transaction->created_at}}</td>
+                                                <td>{{$transaction->status}}</td>
+                                            </tr>
+                                        @endforeach
+                                    @else
+                                        <p>Нет транзакций</p>
+                                    @endif
+{{--                                    <tr>--}}
+{{--                                        <td>Покупка пакета</td>--}}
+{{--                                        <td class="align-middle">--}}
+{{--                                            2000--}}
+{{--                                        </td>--}}
+{{--                                        <td>2018-01-20</td>--}}
+{{--                                        <td>Куплен</td>--}}
+{{--                                    </tr>--}}
+{{--                                    <tr>--}}
+{{--                                        <td>Покупка пакета</td>--}}
+{{--                                        <td class="align-middle">--}}
+{{--                                            2000--}}
+{{--                                        </td>--}}
+{{--                                        <td>2018-01-20</td>--}}
+{{--                                        <td>Куплен</td>--}}
+{{--                                    </tr>--}}
+{{--                                    <tr>--}}
+{{--                                        <td>Поступление от приглашенного друга</td>--}}
+{{--                                        <td class="align-middle">--}}
+{{--                                            250--}}
+{{--                                        </td>--}}
+{{--                                        <td>2018-01-20</td>--}}
+{{--                                        <td>-</td>--}}
+{{--                                    </tr>--}}
+{{--                                    <tr>--}}
+{{--                                        <td>Вывод</td>--}}
+{{--                                        <td class="align-middle">--}}
+{{--                                            2000--}}
+{{--                                        </td>--}}
+{{--                                        <td>2018-01-20</td>--}}
+{{--                                        <td>Выведен</td>--}}
+{{--                                    </tr>--}}
                                     </tbody></table>
                             </div>
                         </div>
