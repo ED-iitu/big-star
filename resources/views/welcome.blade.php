@@ -207,13 +207,13 @@
                         @foreach($packages as $package)
                             <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                                 <div class="box">
-                                    <h3>{{$package->title}}</h3>
+                                    <h3>{{$package->getTranslatedAttribute('title', Session::get('locale'), 'fallbackLocale')}}</h3>
                                     <h4>
                                         {{intval($package->price * $currencyData[Session::get('currency')])}}
                                         <sup> {{Session::get('currency')}}</sup>
                                     </h4>
                                     <ul>
-                                        <li>{{$package->description}}</li>
+                                        <li>{{$package->getTranslatedAttribute('description', Session::get('locale'), 'fallbackLocale')}}</li>
                                     </ul>
                                     <div class="btn-wrap">
                                         <a href="{{route('package', $package->id)}}" class="btn-buy">Купить</a>
