@@ -40,8 +40,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/">Главная</a></li>
-                    <li><a class="nav-link scrollto" href="/#pricing">Пакеты</a></li>
+                    <li><a class="nav-link scrollto active" href="/">{{trans('home.main')}}</a></li>
+                    <li><a class="nav-link scrollto" href="/#pricing">{{trans('home.packages')}}</a></li>
                     <li><a class="nav-link scrollto" href="/#clients">Скачать приложение</a></li>
                     <li><a class="nav-link scrollto" href="/#contact">Контакты</a></li>
                     @if(Auth::user())
@@ -61,6 +61,14 @@
                     @else
                         <li><a class="getstarted" href="{{route('register')}}">Создать аккаунт</a></li>
                     @endif
+                    <li class="dropdown"><a href="#"><span> {{__('languages.' . app()->getLocale())}}</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
+                            <li><a href="{{route('setLocale', 'kz')}}">Казахский</a></li>
+                            <li><a href="{{route('setLocale', 'en')}}">Английский</a></li>
+                            <li><a href="{{route('setLocale', 'tr')}}">Турецкий</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

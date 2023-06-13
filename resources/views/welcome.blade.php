@@ -13,7 +13,7 @@
             </div>
         </section><!-- End Hero -->
 
-        
+
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container" data-aos="fade-up">
@@ -59,7 +59,7 @@
 
             </div>
         </section><!-- End Services Section -->
-        
+
 
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients">
@@ -164,7 +164,7 @@
             </div>
         </section><!-- End Features Section -->
 
-       
+
 
 
         <!-- ======= Portfolio Section ======= -->
@@ -213,37 +213,19 @@
                                         <li>{{$package->description}}</li>
                                     </ul>
                                     <div class="btn-wrap">
-                                        <a href="#" class="btn-buy">Купить</a>
+                                        <a href="{{route('package', $package->id)}}" class="btn-buy">Купить</a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     @endif
 
-
-{{--                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">--}}
-{{--                        <div class="box featured">--}}
-{{--                            <h3>Business</h3>--}}
-{{--                            <h4><sup>$</sup>19<span> / month</span></h4>--}}
-{{--                            <ul>--}}
-{{--                                <li>Aida dere</li>--}}
-{{--                                <li>Nec feugiat nisl</li>--}}
-{{--                                <li>Nulla at volutpat dola</li>--}}
-{{--                                <li>Pharetra massa</li>--}}
-{{--                                <li class="na">Massa ultricies mi</li>--}}
-{{--                            </ul>--}}
-{{--                            <div class="btn-wrap">--}}
-{{--                                <a href="#" class="btn-buy">Buy Now</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
                 </div>
 
             </div>
         </section><!-- End Pricing Section -->
 
-    
+
 
         <!-- ======= Frequently Asked Questions Section ======= -->
         <section id="faq" class="faq">

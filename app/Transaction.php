@@ -11,6 +11,8 @@ class Transaction extends Model
     public const TYPE_PURCHASE = 1;
     public const TYPE_WITHDRAW = 2;
 
+    public const TYPE_REGISTERED = 3;
+
     protected $fillable = [
         'user_id',
         'pocket_id',

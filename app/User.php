@@ -57,6 +57,11 @@ class User extends \TCG\Voyager\Models\User
         return User::all();
     }
 
+    public static function getPresenters()
+    {
+        return User::where('role_id', User::ROLE_PRESENTER)->get();
+    }
+
     public function pockets()
     {
         return $this->hasMany(UserPocket::class);
