@@ -30,4 +30,11 @@ class HomeController extends Controller
 
         return view('welcome', compact('packages', 'news'));
     }
+
+    public function getNewsById(int $id)
+    {
+        $news = Post::where('id', $id)->first();
+
+        return view('news', compact('news'));
+    }
 }

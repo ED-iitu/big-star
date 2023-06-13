@@ -245,7 +245,7 @@
                                         <li>{!! $post->body !!}</li>
                                     </ul>
                                     <div class="btn-wrap">
-                                        <a href="" class="btn-buy">Смотреть</a>
+                                        <a href="{{route('news', $post->id)}}" class="btn-buy">Смотреть</a>
                                     </div>
                                 </div>
                             </div>

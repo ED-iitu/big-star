@@ -30,6 +30,7 @@ Route::get('setlocale/{locale}', function($lang) {
 Route::group(['middleware'=>'language'],function ()
 {
     Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/news/{id}', [\App\Http\Controllers\HomeController::class, 'getNewsById'])->name('news');
     Route::get('package/{id}', [\App\Http\Controllers\PocketController::class, 'getPackage'])->name('package');
     Route::post('buy-pocket', [\App\Http\Controllers\PocketController::class, 'buyPocket'])->name('buyPocket');
 
@@ -45,6 +46,7 @@ Route::group(['middleware'=>'language'],function ()
     Route::get('/password/showResetPasswordForm', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.showResetPasswordSmsForm');
     Route::post('/password/resetByCode', [ResetPasswordController::class, 'resetPassword'])->name('password.resetPasswordBySms');
     Route::get('/backup', [BackupController::class, 'createBackup'])->name('backup.create');
+
 
     Auth::routes();
 

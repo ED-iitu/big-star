@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{--    <script src="https://checkout.cloudpayments.kz/checkout.js"></script>--}}
     <script src="https://widget.cloudpayments.kz/bundles/cloudpayments.js"></script>
-
 
     <main id="main">
         <section id="pricing" class="pricing section-bg">
