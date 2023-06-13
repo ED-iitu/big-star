@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Currency;
 use App\Pocket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use TCG\Voyager\Models\Post;
 
 class HomeController extends Controller
@@ -26,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (!Session::has('currency')) {
+            Session::put('currency', 'KZT');
+        }
+
         $packages     = Pocket::all();
         $news         = Post::all();
         $currencyData = Currency::converter();
