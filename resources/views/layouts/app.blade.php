@@ -69,6 +69,13 @@
                             <li><a href="{{route('setLocale', 'tr')}}">Турецкий</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown"><a href="#"><span>{{Session::get('currency') ?? 'KZT'}}</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
+                            <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>
+                            <li><a href="{{route('setCurrency', 'RUB')}}">RUB</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

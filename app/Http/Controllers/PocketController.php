@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Currency;
 use App\Pocket;
 use App\Transaction;
 use App\User;
@@ -18,8 +19,9 @@ class PocketController extends Controller
     public function getPackage($id)
     {
         $package = Pocket::where('id', $id)->first();
+        $currencyData = Currency::converter();
 
-        return view('pocket', compact('package'));
+        return view('pocket', compact('package', 'currencyData'));
     }
 
     public function buyPocket(Request $request)

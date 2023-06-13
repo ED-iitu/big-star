@@ -27,6 +27,12 @@ Route::get('setlocale/{locale}', function($lang) {
     return redirect()->back();
 })->name('setLocale');
 
+Route::get('setcurrency/{currency}', function($currency) {
+    Session::put('currency', $currency);
+
+    return redirect()->back();
+})->name('setCurrency');
+
 Route::group(['middleware'=>'language'],function ()
 {
     Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');

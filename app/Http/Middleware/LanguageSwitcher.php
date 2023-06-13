@@ -21,9 +21,11 @@ class LanguageSwitcher
     {
         if (!Session::has('locale')) {
             Session::put('locale',Config::get('app.locale'));
+            Session::put('currency','KZT');
         }
 
         App::setLocale(Session::get('locale'));
+        Session::put('currency', Session::get('currency'));
 
         return $next($request);
     }

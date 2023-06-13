@@ -14,7 +14,8 @@
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="box">
                             <h3>{{$package->title}}</h3>
-                            <h4>{{$package->price}} <sup> KZT</sup></h4>
+                                {{intval($package->price * $currencyData[Session::get('currency')])}}
+                            <sup> {{Session::get('currency')}}</sup>
                             <ul>
                                 <li>{{$package->description}}</li>
                             </ul>
@@ -24,7 +25,7 @@
                         <form id="paymentFormSample" autocomplete="off">
                             @csrf
                             <input type="hidden" id="pocketId" value="{{$package->id}}">
-                            <input type="hidden" id="price" value="{{$package->price}}">
+                            <input type="hidden" id="price" value="{{$package->price * $currencyData[Session::get('currency')]}}">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
@@ -67,6 +68,7 @@
     let pocketId = parseInt(document.getElementById("pocketId").value)
     let registerFrom = parseInt(document.getElementById("registered_from_value").value)
     let presenter = parseInt(document.getElementById("presenter_value").value)
+    let currency = "{{Session::get('currency')}}";
 
     function pay() {
         var widget = new cp.CloudPayments({
@@ -81,7 +83,7 @@
                 publicId: 'pk_ff33fc6f378003773cc43ec8f5b9e', //id из личного кабинета
                 description: 'Оплата товаров в big-star.kz', //назначение
                 amount: price, //сумма
-                currency: 'KZT', //валюта
+                currency: currency, //валюта
                 accountId: 'user@example.com', //идентификатор плательщика (необязательно)
                 invoiceId: '1234567', //номер заказа  (необязательно)
                 skin: "mini", //дизайн виджета (необязательно)

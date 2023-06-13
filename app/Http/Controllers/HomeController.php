@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Currency;
 use App\Pocket;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Post;
@@ -25,10 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $packages = Pocket::all();
-        $news     = Post::all();
+        $packages     = Pocket::all();
+        $news         = Post::all();
+        $currencyData = Currency::converter();
 
-        return view('welcome', compact('packages', 'news'));
+        return view('welcome', compact('packages', 'news', 'currencyData'));
     }
 
     public function getNewsById(int $id)

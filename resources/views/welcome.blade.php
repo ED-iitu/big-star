@@ -208,7 +208,10 @@
                             <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                                 <div class="box">
                                     <h3>{{$package->title}}</h3>
-                                    <h4>{{$package->price}} <sup> KZT</sup></h4>
+                                    <h4>
+                                        {{intval($package->price * $currencyData[Session::get('currency')])}}
+                                        <sup> {{Session::get('currency')}}</sup>
+                                    </h4>
                                     <ul>
                                         <li>{{$package->description}}</li>
                                     </ul>
