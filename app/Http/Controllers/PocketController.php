@@ -8,6 +8,7 @@ use App\UserPocket;
 use App\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class PocketController extends Controller
 {
@@ -32,6 +33,8 @@ class PocketController extends Controller
         $pocket         = Pocket::where('id', $pocketId)->first();
         $fee            = 10; // налог 10%
 
+        Log::info("Начинаем покупку пакета");
+
         // Сохраняем пакет пользователя
         $userPocket = new UserPocket();
         $userPocket->user_id = Auth::user()->id;
@@ -49,12 +52,17 @@ class PocketController extends Controller
         $transaction->save();
 
         // Пополняем кошелек пользователя, который пригласил
+        Log::info("Начисляем пользователю который пригласил");
+        Log::info($registeredFrom);
         $actualNeededPrice    = $pocket->price * ($fee / 100);
         $needPrice            = $actualNeededPrice - ($actualNeededPrice * ($fee / 100));
         $registeredFromWallet = Wallet::where('user_id', $registeredFrom)->first();
+        Log::info($registeredFromWallet->id);
+        Log::info($needPrice);
 
         $registeredFromWallet->amount += $needPrice;
         $registeredFromWallet->save();
+        Log::info("Закончили начисление пользователю который пригласил");
 
         // Записываем транзакцию о начисление
         $transaction          = new Transaction();
@@ -85,6 +93,9 @@ class PocketController extends Controller
         $response = [
             'status' => 'ok'
         ];
+
+
+        Log::info("Завершили покупку пакета");
 
         return response()->json($response);
     }
