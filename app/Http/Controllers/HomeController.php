@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Currency;
 use App\Pocket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use TCG\Voyager\Models\Post;
 
@@ -25,8 +27,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        $ip = $request->getClientIp();
+
+        $response = Http::get('http://ip-api.com/json/'.$ip)->json();
+
+        if ($response['countryCode'] == 'RU') {
+            Session::put('currency', 'RUB');
+            Session::put('locale', 'ru');
+            App::setLocale('ru');
+        }
+
+        if (!in_array($response['countryCode'], ['RU', 'KZ'])) {
+            Session::put('currency', 'USD');
+            Session::put('locale', 'en');
+            App::setLocale('en');
+        }
+
         if (!Session::has('currency')) {
             Session::put('currency', 'KZT');
         }
