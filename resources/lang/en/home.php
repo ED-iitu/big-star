@@ -8,7 +8,7 @@ return [
     'profile' => 'Profile',
     'logout' => 'Logout',
     'create' => 'Create account',
-    'text1' => 'Лучшее приложение для пассивного дохода',
-    'text2' => 'Что такое BigStar Messenger?',
+    'text1' => 'The best app for passive income',
+    'text2' => 'What is BigStar Messenger?',
     'text3' => 'More'
 ];
