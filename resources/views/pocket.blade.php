@@ -30,9 +30,9 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <small>Кто пригласил?</small>
-                                        <select class="form-control select2" id="registered_from" name="registered_from">
+                                        <select class="form-control select2" id="registered_from_value" name="registered_from">
                                             @foreach (\App\User::getAll() as $user)
-                                                <option value="{{ $user->id }}" id="registered_from_value"
+                                                <option value="{{ $user->id }}"
                                                     {{ ($user->id == Auth::user()->registered_from ? 'selected' : '') }}>{{ $user->name }}</option>
                                             @endforeach
                                         </select>
@@ -69,6 +69,8 @@
     let registerFrom = parseInt(document.getElementById("registered_from_value").value)
     let presenter = parseInt(document.getElementById("presenter_value").value)
     let currency = "{{Session::get('currency')}}";
+
+    console.log(registerFrom)
 
     function pay() {
         var widget = new cp.CloudPayments({
