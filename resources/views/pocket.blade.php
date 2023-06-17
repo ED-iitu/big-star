@@ -30,10 +30,9 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <small>Кто пригласил?</small>
-                                        <select class="form-control select2" id="registered_from_value" name="registered_from">
+                                        <select class="form-control select2" id="registered_from_value">
                                             @foreach (\App\User::getAll() as $user)
-                                                <option value="{{ $user->id }}"
-                                                    {{ ($user->id == Auth::user()->registered_from ? 'selected' : '') }}>{{ $user->name }}</option>
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -58,21 +57,20 @@
 
 <script>
     let btn = document.getElementById("payButton")
-    //let language = navigator.language //or fix
-    let language = "ru-RU"
-
-    let price = parseInt(document.getElementById("price").value)
-
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-    let pocketId = parseInt(document.getElementById("pocketId").value)
-    let registerFrom = parseInt(document.getElementById("registered_from_value").value)
-    let presenter = parseInt(document.getElementById("presenter_value").value)
-    let currency = "{{Session::get('currency')}}";
-
-    console.log(registerFrom)
 
     function pay() {
+        //let language = navigator.language //or fix
+        let language = "ru-RU"
+
+        let price        = parseInt(document.getElementById("price").value)
+        const csrfToken  = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        let pocketId     = parseInt(document.getElementById("pocketId").value)
+        var registerFrom = parseInt(document.getElementById("registered_from_value").value)
+        var presenter    = parseInt(document.getElementById("presenter_value").value)
+        let currency     = "{{Session::get('currency')}}";
+
+        console.log(registerFrom)
+
         var widget = new cp.CloudPayments({
             applePaySupport: false,
             googlePaySupport: false,
@@ -92,8 +90,6 @@
                 autoClose: 3
             }, {
                 onSuccess: function(options) { // success
-                    console.log('zhopa')
-
                     fetch('{{route('buyPocket')}}', {
                         method: 'POST',
                         headers: {

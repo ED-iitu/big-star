@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -54,7 +55,7 @@ class User extends \TCG\Voyager\Models\User
 
     public static function getAll()
     {
-        return User::all();
+        return User::where('id', '!=', Auth::user()->id)->get();
     }
 
     public function transactions()
@@ -64,7 +65,7 @@ class User extends \TCG\Voyager\Models\User
 
     public static function getPresenters()
     {
-        return User::where('role_id', User::ROLE_PRESENTER)->get();
+        return User::where('role_id', User::ROLE_PRESENTER)->where('id', '!=', Auth::user()->id)->get();
     }
 
     public function pockets()

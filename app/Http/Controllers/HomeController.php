@@ -33,13 +33,13 @@ class HomeController extends Controller
 
         $response = Http::get('http://ip-api.com/json/'.$ip)->json();
 
-        if ($response['countryCode'] == 'RU') {
+        if (isset($response['countryCode']) && $response['countryCode'] == 'RU') {
             Session::put('currency', 'RUB');
             Session::put('locale', 'ru');
             App::setLocale('ru');
         }
 
-        if (!in_array($response['countryCode'], ['RU', 'KZ'])) {
+        if (isset($response['countryCode']) && !in_array($response['countryCode'], ['RU', 'KZ'])) {
             Session::put('currency', 'USD');
             Session::put('locale', 'en');
             App::setLocale('en');

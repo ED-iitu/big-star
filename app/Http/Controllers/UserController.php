@@ -14,10 +14,12 @@ class UserController
             return redirect()->route('home');
         }
 
-        $registeredFrom = User::where('id', Auth::user()->registered_from)->first() ?? null;
+        $usersList = $this->getUsersRegisteredList(Auth::user()->registered_from);
+        $withdrawRequest = WithdrawRequest::where('user_id', Auth::user()->id)->get();
 
         return view('profile.index', [
-            'registeredFrom' => $registeredFrom
+            'usersList' => $usersList,
+            'withdraw' => $withdrawRequest
         ]);
     }
 
@@ -89,9 +91,25 @@ class UserController
         $withdraw->phone      = $request->phone;
         $withdraw->bank_title = $request->bank_title;
         $withdraw->amount     = $request->amount;
+        $withdraw->status     = WithdrawRequest::STATUS_CREATED;
 
         $withdraw->save();
 
         return redirect()->back()->with('success', 'Заявка на вывод создана');
+    }
+
+    protected function getUsersRegisteredList(?int $id): array
+    {
+        $list = [];
+
+        $registeredFrom = User::where('id', $id)->first() ?? null;
+
+        if ($registeredFrom) {
+            $list[] = $registeredFrom;
+
+            $list = array_merge($list, $this->getUsersRegisteredList($registeredFrom->registered_from));
+        }
+
+        return $list;
     }
 }

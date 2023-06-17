@@ -92,12 +92,21 @@
                                     <small>Скопируйте и отправте друзьям!</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail4">Приглашен пользователем</label>
-                                    <input type="text" class="form-control" id="inputEmail4" value="{{$registeredFrom->name ?? null}}" readonly>
-                                </div>
-                                <div class="form-group">
                                     <label for="inputEmail4">Ваш баланс</label>
                                     <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{ (Auth::user()->role_id == 2) ? '0' : Auth::user()->wallet->amount }}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <h2>Иерархия приглашения пользователей</h2>
+
+                                    @if(count($usersList) > 0)
+                                        <?php $count = count($usersList); ?>
+                                        @foreach($usersList as $key => $user)
+                                            <?php $count--; ?>
+                                            <span> {{$user->name}} @if($count != 0) ---> @else  @endif </span>
+                                        @endforeach
+                                    @else
+                                        <p>Вас никто не приглашал</p>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <h2>Ваши купленные пакеты</h2>
@@ -159,10 +168,17 @@
                                     @if(count(Auth::user()->transactions) > 0)
                                         @foreach(Auth::user()->transactions as $transaction)
                                             <tr>
-                                                <td>{{$transaction->type}}</td>
-                                                <td class="align-middle">
-                                                    {{$transaction->sum}}
-                                                </td>
+                                                <td>{{$transaction->description ?? $transaction->type}}</td>
+                                                @if($transaction->type == 'Вывод')
+                                                    <td class="align-middle" style="color: red">
+                                                        - {{$transaction->sum}}
+                                                    </td>
+                                                @else
+                                                    <td class="align-middle" style="color: green">
+                                                         {{$transaction->sum}}
+                                                    </td>
+                                                @endif
+
                                                 <td>{{$transaction->created_at}}</td>
                                                 <td>{{$transaction->status}}</td>
                                             </tr>
@@ -170,38 +186,6 @@
                                     @else
                                         <p>Нет транзакций</p>
                                     @endif
-{{--                                    <tr>--}}
-{{--                                        <td>Покупка пакета</td>--}}
-{{--                                        <td class="align-middle">--}}
-{{--                                            2000--}}
-{{--                                        </td>--}}
-{{--                                        <td>2018-01-20</td>--}}
-{{--                                        <td>Куплен</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>Покупка пакета</td>--}}
-{{--                                        <td class="align-middle">--}}
-{{--                                            2000--}}
-{{--                                        </td>--}}
-{{--                                        <td>2018-01-20</td>--}}
-{{--                                        <td>Куплен</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>Поступление от приглашенного друга</td>--}}
-{{--                                        <td class="align-middle">--}}
-{{--                                            250--}}
-{{--                                        </td>--}}
-{{--                                        <td>2018-01-20</td>--}}
-{{--                                        <td>-</td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>Вывод</td>--}}
-{{--                                        <td class="align-middle">--}}
-{{--                                            2000--}}
-{{--                                        </td>--}}
-{{--                                        <td>2018-01-20</td>--}}
-{{--                                        <td>Выведен</td>--}}
-{{--                                    </tr>--}}
                                     </tbody></table>
                             </div>
                         </div>
@@ -235,6 +219,33 @@
                                 <button type="submit" class="btn btn-primary">Создать заявку</button>
                             </form>
 
+                        </div>
+                    </div>
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h5 class="card-title">Запросы на вывод</h5>
+                            <div>
+                                @if(count($withdraw) > 0)
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tbody><tr>
+                                                <th>Сумма</th>
+                                                <th>Дата</th>
+                                                <th>Статус</th>
+                                            </tr>
+                                            @foreach($withdraw as $withdrawRequest)
+                                                <tr>
+                                                    <td>{{$withdrawRequest->amount}}</td>
+                                                    <td>{{$withdrawRequest->created_at}}</td>
+                                                    <td>{{$withdrawRequest->status}}</td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody></table>
+                                    </div>
+                                @else
+                                    У вас нет заявок на вывод
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@ class PocketController extends Controller
         $pocket         = Pocket::where('id', $pocketId)->first();
         $fee            = 10; // налог 10%
 
-        Log::info("Начинаем покупку пакета");
+        Log::info("Register From% ." . $registeredFrom);
 
         // Сохраняем пакет пользователя
         $userPocket = new UserPocket();
@@ -42,34 +42,31 @@ class PocketController extends Controller
         $userPocket->save();
 
         // записываем факт покупки
-        $transaction            = new Transaction();
-        $transaction->user_id   = Auth::user()->id;
-        $transaction->pocket_id = $pocket->id;
-        $transaction->type      = Transaction::TYPE_PURCHASE;
-        $transaction->status    = Transaction::STATUS_SUCCESS;
-        $transaction->sum       = $pocket->price;
+        $transaction              = new Transaction();
+        $transaction->user_id     = Auth::user()->id;
+        $transaction->pocket_id   = $pocket->id;
+        $transaction->type        = Transaction::TYPE_PURCHASE;
+        $transaction->status      = Transaction::STATUS_SUCCESS;
+        $transaction->sum         = $pocket->price;
+        $transaction->description = 'Покупка пакета: ' . $pocket->title;
 
         $transaction->save();
 
         // Пополняем кошелек пользователя, который пригласил
-        Log::info("Начисляем пользователю который пригласил");
-        Log::info($registeredFrom);
         $actualNeededPrice    = $pocket->price * ($fee / 100);
         $needPrice            = $actualNeededPrice - ($actualNeededPrice * ($fee / 100));
         $registeredFromWallet = Wallet::where('user_id', $registeredFrom)->first();
-        Log::info($registeredFromWallet->id);
-        Log::info($needPrice);
 
         $registeredFromWallet->amount += $needPrice;
         $registeredFromWallet->save();
-        Log::info("Закончили начисление пользователю который пригласил");
 
         // Записываем транзакцию о начисление
-        $transaction          = new Transaction();
-        $transaction->user_id = $registeredFrom;
-        $transaction->type    = Transaction::TYPE_REGISTERED;
-        $transaction->status  = Transaction::STATUS_SUCCESS;
-        $transaction->sum     = $needPrice;
+        $transaction              = new Transaction();
+        $transaction->user_id     = $registeredFrom;
+        $transaction->type        = Transaction::TYPE_REGISTERED;
+        $transaction->status      = Transaction::STATUS_SUCCESS;
+        $transaction->sum         = $needPrice;
+        $transaction->description = "Оплата за приглашения пользователя: " . Auth::user()->name;
 
         $transaction->save();
 
@@ -87,6 +84,7 @@ class PocketController extends Controller
         $transaction->type    = Transaction::TYPE_REGISTERED;
         $transaction->status  = Transaction::STATUS_SUCCESS;
         $transaction->sum     = $needPrice;
+        $transaction->description = 'Оплата за покупку пакета пользователем: ' . Auth::user()->name;
 
         $transaction->save();
 
