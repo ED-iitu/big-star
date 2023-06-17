@@ -8,6 +8,8 @@ class WithdrawRequest extends Model
     public const STATUS_ACCEPTED = 2;
     public const STATUS_CANCELED = 3;
 
+    public const STATUS_SENT = 4;
+
     protected $fillable = [
         'user_id', 'card_no', 'phone', 'amount', 'status'
     ];
@@ -17,12 +19,14 @@ class WithdrawRequest extends Model
     public static function getStatusAsText($status)
     {
         switch ($status) {
+            case 1:
+                return "Одобрено";
             case 2:
-                return "Одобрен";
+                return "Отказано";
             case 3:
-                return "Отклонен";
+                return "Отправлено";
             default:
-                return "Создан";
+                return "В работе";
         }
     }
 }

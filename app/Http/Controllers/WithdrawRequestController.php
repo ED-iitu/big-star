@@ -13,7 +13,7 @@ class WithdrawRequestController extends VoyagerBaseController
 {
     public function update(Request $request, $id)
     {
-        if ($request->status == WithdrawRequest::STATUS_ACCEPTED) {
+        if ($request->status == WithdrawRequest::STATUS_SENT) {
             $userWallet = Wallet::where('user_id', $request->user_id)->first();
             $data       =  [
                 'message'    => "Ошибка при списании баланса, недостаточно средств",
