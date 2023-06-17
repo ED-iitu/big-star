@@ -237,7 +237,7 @@
                                                 <tr>
                                                     <td>{{$withdrawRequest->amount}}</td>
                                                     <td>{{$withdrawRequest->created_at}}</td>
-                                                    <td>{{$withdrawRequest->status}}</td>
+                                                    <td>{{ \App\WithdrawRequest::getStatusAsText($withdrawRequest->status)}}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody></table>

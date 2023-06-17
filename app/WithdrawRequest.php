@@ -14,7 +14,7 @@ class WithdrawRequest extends Model
 
     protected $table = 'withdraw_requests';
 
-    public function getStatusAttribute($status)
+    public static function getStatusAsText($status)
     {
         switch ($status) {
             case 2:
