@@ -21,6 +21,10 @@ class MonthlyPurchaseController extends VoyagerBaseController
                 $pocket     = Pocket::where('id', $userPocket->pocket_id)->first();
                 $userWallet = Wallet::where('id', $user->id)->first();
 
+                if (null == $userWallet) {
+                    continue;
+                }
+
                 $userWallet->amount += $request->amount * $pocket->percent;
                 $userWallet->save();
 
