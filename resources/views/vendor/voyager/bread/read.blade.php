@@ -149,7 +149,7 @@
                     <div class="panel-heading" style="border-bottom:0;">
                         <h3 class="panel-title">Иерархия приглашения пользователей</h3>
                         <div class="panel-body" style="padding-top:0;">
-                            @if(count($usersList) <= 0)
+                            @if(isset($usersList) && count($usersList) <= 0)
                                 Нет пригласителя
                             @else
                                 @foreach($usersList as $user)
