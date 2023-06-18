@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToTransactionsTable extends Migration
+class AddColumnToPocketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColumnToTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->text('description')->nullable();
+        Schema::table('pockets', function (Blueprint $table) {
+            $table->float('percent', 8, 4)->default(0.001);
         });
     }
 
@@ -25,8 +25,8 @@ class AddColumnToTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropColumn('description');
+        Schema::table('pockets', function (Blueprint $table) {
+            $table->dropColumn('percent');
         });
     }
 }

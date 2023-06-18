@@ -13,6 +13,7 @@ class Pocket extends Model
     protected $fillable = [
         'title',
         'description',
-        'price'
+        'price',
+        'percent',
     ];
 }
