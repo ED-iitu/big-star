@@ -24,6 +24,10 @@ class ResetPasswordController extends Controller
         $smsCode   = $this->generateSMSCode();
         $user      = User::where('phone', $request->phone)->first();
 
+        if (null == $user) {
+            return redirect()->back()->with('error', 'Пользователь не найден');
+        }
+
         $user->sms_code = $smsCode;
         $user->save();
 

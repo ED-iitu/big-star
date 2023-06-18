@@ -12,6 +12,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -164,5 +168,18 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('assets/js/main.js')}}"></script>
+
+<script>
+    jQuery(document).ready(function($) {
+        // Apply phone mask to the input with id 'phone'
+        $('#phone').inputmask({
+            mask: '+999999999999', // Change this to match the desired phone mask pattern
+            placeholder: '', // Remove this line if you want to show a placeholder character
+            showMaskOnHover: false, // Remove this line if you want to show the mask on hover
+            showMaskOnFocus: false, // Remove this line if you want to show the mask on focus
+            showMaskOnBlur: true // Remove this line if you want to hide the mask on blur
+        });
+    });
+</script>
 </body>
 </html>
