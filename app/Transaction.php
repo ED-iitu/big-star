@@ -46,6 +46,8 @@ class Transaction extends Model
                 return "Вывод";
             case 3:
                 return "Оплата за приглашения";
+            case 4:
+                return "Начисление процентов";
             default:
                 return "Покупка";
         }
