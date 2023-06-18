@@ -13,7 +13,7 @@ class MonthlyPurchaseController extends VoyagerBaseController
 {
     public function update(Request $request, $id)
     {
-        if ($request->status === MonthlyPurchase::STATUS_FILL) {
+        if ($request->status == MonthlyPurchase::STATUS_FILL) {
             $userPockets = UserPocket::all();
 
             foreach ($userPockets as $userPocket) {
