@@ -72,4 +72,11 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->belongsToMany(Pocket::class, 'user_pockets');
     }
+
+    public static function getUserById($id)
+    {
+        $user = self::where('id', $id)->first();
+
+        return $user ?? null;
+    }
 }

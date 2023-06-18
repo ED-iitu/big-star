@@ -97,7 +97,7 @@
                                 <input type="checkbox" name="is_active"@if(isset($dataTypeContent->is_active) && $dataTypeContent->is_active) checked="checked"@endif>
                             </div>
 
-                            @can('editRoles', $dataTypeContent)
+{{--                            @can('editRoles', $dataTypeContent)--}}
                                 <div class="form-group">
                                     <label for="default_role">{{ __('voyager::profile.role_default') }}</label>
                                     @php
@@ -116,7 +116,7 @@
                                     @endphp
                                     @include('voyager::formfields.relationship')
                                 </div>
-                            @endcan
+{{--                            @endcan--}}
                             @php
                                 if (isset($dataTypeContent->locale)) {
                                     $selected_locale = $dataTypeContent->locale;
