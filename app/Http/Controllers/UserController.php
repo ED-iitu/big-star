@@ -103,16 +103,35 @@ class UserController extends VoyagerBaseController
         return redirect()->back()->with('success', 'Заявка на вывод создана');
     }
 
-    protected function getUsersRegisteredList(?int $id): array
+//    protected function getUsersRegisteredList(?int $id): array
+//    {
+//        $list = [];
+//
+//        $registeredFrom = User::where('id', $id)->first() ?? null;
+//
+//        if ($registeredFrom) {
+//            $list[] = $registeredFrom;
+//
+//            $list = array_merge($list, $this->getUsersRegisteredList($registeredFrom->registered_from));
+//        }
+//
+//        return $list;
+//    }
+
+    protected function getUsersRegisteredList(?int $id, array &$visited = []): array
     {
         $list = [];
 
-        $registeredFrom = User::where('id', $id)->first() ?? null;
+        if ($id !== null && !in_array($id, $visited)) {
+            $visited[] = $id;
 
-        if ($registeredFrom) {
-            $list[] = $registeredFrom;
+            $registeredFrom = User::where('id', $id)->first();
 
-            $list = array_merge($list, $this->getUsersRegisteredList($registeredFrom->registered_from));
+            if ($registeredFrom && $registeredFrom->registered_from !== null) {
+                $list[] = $registeredFrom;
+
+                $list = array_merge($list, $this->getUsersRegisteredList($registeredFrom->registered_from, $visited));
+            }
         }
 
         return $list;
