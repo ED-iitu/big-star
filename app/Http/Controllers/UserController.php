@@ -91,6 +91,12 @@ class UserController extends VoyagerBaseController
     {
         $withdraw = new WithdrawRequest();
 
+        $wallet = Auth::user()->wallet;
+
+        if ($wallet->amount < $request->amount) {
+            return redirect()->back()->with('error', 'Недостаточно средств для списания');
+        }
+
         $withdraw->user_id    = Auth::user()->id;
         $withdraw->card_no    = $request->card_no;
         $withdraw->phone      = $request->phone;
