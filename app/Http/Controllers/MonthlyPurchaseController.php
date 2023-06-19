@@ -20,7 +20,7 @@ class MonthlyPurchaseController extends VoyagerBaseController
             foreach ($userPockets as $userPocket) {
                 $user       = User::where('id', $userPocket->user_id)->first();
                 $pocket     = Pocket::where('id', $userPocket->pocket_id)->first();
-                $userWallet = Wallet::where('id', $userPocket->user_id)->first();
+                $userWallet = Wallet::where('user_id', $userPocket->user_id)->first();
 
                 if (null == $userWallet) {
                     Log::info('Пропускаем начисление пакета, так как кошелек не найден');
