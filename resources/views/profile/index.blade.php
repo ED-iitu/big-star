@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail4">Ваш баланс</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{ (Auth::user()->role_id == 2) ? '0' : Auth::user()->wallet->amount }}" readonly>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Баланс" value="{{ Auth::user()->wallet->amount }}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <h2>Иерархия приглашения пользователей</h2>
