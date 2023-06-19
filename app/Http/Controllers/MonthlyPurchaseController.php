@@ -7,6 +7,7 @@ use App\User;
 use App\UserPocket;
 use App\Wallet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class MonthlyPurchaseController extends VoyagerBaseController
@@ -19,9 +20,11 @@ class MonthlyPurchaseController extends VoyagerBaseController
             foreach ($userPockets as $userPocket) {
                 $user       = User::where('id', $userPocket->user_id)->first();
                 $pocket     = Pocket::where('id', $userPocket->pocket_id)->first();
-                $userWallet = Wallet::where('id', $user->id)->first();
+                $userWallet = Wallet::where('id', $userPocket->user_id)->first();
 
                 if (null == $userWallet) {
+                    Log::info('Пропускаем начисление пакета, так как кошелек не найден');
+                    Log::info($userPocket->user_id);
                     continue;
                 }
 
