@@ -146,7 +146,7 @@
                         </div>
                     </div>
 
-                    @if(isset($usersList)) @endif
+                    @if(isset($usersList))
                         <div class="panel-heading" style="border-bottom:0;">
                             <h3 class="panel-title">Иерархия приглашения пользователей</h3>
                             <div class="panel-body" style="padding-top:0;">
@@ -159,7 +159,7 @@
                                 @endif
                             </div>
                         </div>
-                    @elseif()
+                    @endif
 
 
                 </div>
