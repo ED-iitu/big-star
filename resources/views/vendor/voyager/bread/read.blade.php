@@ -134,6 +134,7 @@
                         @endif
                     @endforeach
 
+                    @if(isset($usersList))
                     <div class="panel-heading" style="border-bottom:0;">
                         <h3 class="panel-title">Кем приглашен</h3>
                         <div class="panel-body" style="padding-top:0;">
@@ -145,6 +146,7 @@
 
                         </div>
                     </div>
+                    @endif
 
                     @if(isset($usersList))
                         <div class="panel-heading" style="border-bottom:0;">
