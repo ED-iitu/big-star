@@ -11,7 +11,7 @@ class WithdrawRequest extends Model
     public const STATUS_SENT = 4;
 
     protected $fillable = [
-        'user_id', 'card_no', 'phone', 'amount', 'status'
+        'user_id', 'card_no', 'phone', 'amount', 'status', 'country', 'city', 'organization_type'
     ];
 
     protected $table = 'withdraw_requests';

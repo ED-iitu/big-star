@@ -103,26 +103,14 @@ class UserController extends VoyagerBaseController
         $withdraw->bank_title = $request->bank_title;
         $withdraw->amount     = $request->amount;
         $withdraw->status     = WithdrawRequest::STATUS_CREATED;
+        $withdraw->country    = $request->country;
+        $withdraw->city       = $request->city;
+        $withdraw->organization_type = $request->organization_type;
 
         $withdraw->save();
 
         return redirect()->back()->with('success', 'Заявка на вывод создана');
     }
-
-//    protected function getUsersRegisteredList(?int $id): array
-//    {
-//        $list = [];
-//
-//        $registeredFrom = User::where('id', $id)->first() ?? null;
-//
-//        if ($registeredFrom) {
-//            $list[] = $registeredFrom;
-//
-//            $list = array_merge($list, $this->getUsersRegisteredList($registeredFrom->registered_from));
-//        }
-//
-//        return $list;
-//    }
 
     protected function getUsersRegisteredList(?int $id, array &$visited = []): array
     {

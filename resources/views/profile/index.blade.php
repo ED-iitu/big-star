@@ -200,7 +200,13 @@
                             <form method="POST" action="{{route('user.createWithdraw')}}">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="inputPasswordCurrent">Номер карты</label>
+                                    <input type="radio" id="fiz" name="organization_type" value="1">
+                                    <label for="fiz">Физ лицо</label><br>
+                                    <input type="radio" id="ur" name="organization_type" value="2">
+                                    <label for="ur">Юр лицо</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Номер карты / счета</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="card_no">
                                 </div>
                                 <div class="form-group">
@@ -214,6 +220,14 @@
                                 <div class="form-group">
                                     <label for="inputPasswordCurrent">Сумма</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="amount">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Страна</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordCurrent">Город</label>
+                                    <input type="text" class="form-control" id="inputPasswordCurrent" name="city">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Создать заявку</button>
