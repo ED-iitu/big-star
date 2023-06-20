@@ -7,7 +7,7 @@ class Currency
 {
     public static function converter()
     {
-        return Cache::remember('currency_data_v2', 10000, function () {
+        return Cache::remember('currency_data_v3', 10000, function () {
             $response = Http::get('https://v6.exchangerate-api.com/v6/cf52beb06094c2299899d963/latest/KZT')->json();
 
             $kzt = $response['conversion_rates']['KZT'];
