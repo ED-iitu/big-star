@@ -28,7 +28,9 @@ class MonthlyPurchaseController extends VoyagerBaseController
                     continue;
                 }
 
-                $userWallet->amount += $request->amount * $pocket->percent;
+                $result = ($pocket->percen / 100) * $request->amount;
+
+                $userWallet->amount += $result;
                 $userWallet->save();
 
                 $transaction = new Transaction();
