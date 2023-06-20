@@ -20,13 +20,13 @@ class WithdrawRequest extends Model
     {
         switch ($status) {
             case 1:
-                return "Одобрено";
-            case 2:
-                return "Отказано";
-            case 3:
-                return "Отправлено";
-            default:
                 return "В работе";
+            case 2:
+                return "Одобрено";
+            case 3:
+                return "Отказано";
+            case 4:
+                return "Переведено";
         }
     }
 }
