@@ -13,11 +13,13 @@ class Currency
             $kzt = $response['conversion_rates']['KZT'];
             $usd = $response['conversion_rates']['USD'];
             $rub = $response['conversion_rates']['RUB'];
+            $try = $response['conversion_rates']['TRY'];
             // Ваши данные, которые будут сохранены в кеше, если они не существуют
             return [
                 'KZT' => $kzt,
                 'USD' => $usd,
-                'RUB' => $rub
+                'RUB' => $rub,
+                'TRY' => $try,
             ];
         });
     }

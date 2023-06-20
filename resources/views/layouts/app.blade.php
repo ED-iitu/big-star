@@ -78,6 +78,7 @@
                             <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
                             <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>
                             <li><a href="{{route('setCurrency', 'RUB')}}">RUB</a></li>
+                            <li><a href="{{route('setCurrency', 'TRY')}}">TRY</a></li>
                         </ul>
                     </li>
 
