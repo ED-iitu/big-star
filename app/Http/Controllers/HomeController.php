@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Currency;
 use App\Pocket;
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
@@ -60,8 +61,9 @@ class HomeController extends Controller
         $packages     = Pocket::all();
         $news         = Post::all();
         $currencyData = Currency::converter();
+        $videos       = Video::all();
 
-        return view('welcome', compact('packages', 'news', 'currencyData'));
+        return view('welcome', compact('packages', 'news', 'currencyData', 'videos'));
     }
 
     public function getNewsById(int $id)

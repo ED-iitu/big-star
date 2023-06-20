@@ -183,12 +183,13 @@
                     </div>
                 </div>
                 <div class="row portfolio-container">
-                    <div class="col-lg-6 col-md-6 portfolio-item filter-app">
-                        <iframe width="600" height="350" src="https://www.youtube.com/embed/WQ7ZijkrB3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-lg-6 col-md-6 portfolio-item filter-card">
-                        <iframe width="600" height="350" src="https://www.youtube.com/embed/WQ7ZijkrB3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+                    @if(count($videos) > 0)
+                        @foreach($videos as $video)
+                            <div class="col-lg-6 col-md-6 portfolio-item {{$video->type ?? '.filter-app'}}">
+                                <iframe width="600" height="350" src="{{$video->link}}" title="{{$video->title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </section><!-- End Portfolio Section -->
