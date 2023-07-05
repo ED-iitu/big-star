@@ -18,6 +18,7 @@ class MonthlyPurchaseController extends VoyagerBaseController
             $userPockets = UserPocket::all();
 
             foreach ($userPockets as $userPocket) {
+                Log::info($request->amount);
                 $user       = User::where('id', $userPocket->user_id)->first();
                 $pocket     = Pocket::where('id', $userPocket->pocket_id)->first();
                 $userWallet = Wallet::where('user_id', $userPocket->user_id)->first();
@@ -29,6 +30,8 @@ class MonthlyPurchaseController extends VoyagerBaseController
                 }
 
                 $result = ($pocket->percen / 100) * $request->amount;
+                Log::info("Сумма для начисления");
+                Log::info($result);
 
                 $userWallet->amount += $result;
                 $userWallet->save();
