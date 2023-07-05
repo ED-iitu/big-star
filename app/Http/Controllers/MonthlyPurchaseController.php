@@ -22,6 +22,11 @@ class MonthlyPurchaseController extends VoyagerBaseController
                 $user       = User::where('id', $userPocket->user_id)->first();
                 $pocket     = Pocket::where('id', $userPocket->pocket_id)->first();
                 $userWallet = Wallet::where('user_id', $userPocket->user_id)->first();
+                $percent    = floatval($pocket->percent);
+                Log::info("PERCENT");
+                Log::info($percent);
+
+                Log::info($pocket);
 
                 if (null == $userWallet) {
                     Log::info('Пропускаем начисление пакета, так как кошелек не найден');
@@ -29,7 +34,7 @@ class MonthlyPurchaseController extends VoyagerBaseController
                     continue;
                 }
 
-                $result = ($pocket->percen / 100) * $request->amount;
+                $result = ($percent / 100) * $request->amount;
                 Log::info("Сумма для начисления");
                 Log::info($result);
 
@@ -38,7 +43,7 @@ class MonthlyPurchaseController extends VoyagerBaseController
 
                 $transaction = new Transaction();
                 $transaction->user_id = $user->id;
-                $transaction->sum = $request->amount * $pocket->percent;
+                $transaction->sum = ($percent / 100) * $request->amount;
                 $transaction->type = Transaction::TYPE_MONTHLY_PURCHASE;
                 $transaction->description = $request->title;
 

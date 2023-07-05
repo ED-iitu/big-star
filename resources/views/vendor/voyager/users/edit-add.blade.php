@@ -76,6 +76,15 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="registered_from">Пакеты </label>
+                                <select class="form-control select2" id="pocket" name="pocket">
+                                    @foreach (\App\Pocket::getAll() as $pocket)
+                                        <option value="{{ $pocket->id }}">{{ $pocket->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="invite_code">Код приглашения</label>
                                 <input type="text" class="form-control" id="invite_code" name="invite_code"
                                        placeholder="Код приглашения"
@@ -92,10 +101,10 @@
                                        autocomplete="new-password">
                             </div>
 
-                            <div class="form-group">
-                                <label for="featured">{{ __('auth.active') }}</label>
-                                <input type="checkbox" name="is_active"@if(isset($dataTypeContent->is_active) && $dataTypeContent->is_active) checked="checked"@endif>
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <label for="featured">{{ __('auth.active') }}</label>--}}
+{{--                                <input type="checkbox" name="is_active"@if(isset($dataTypeContent->is_active) && $dataTypeContent->is_active) checked="checked"@endif>--}}
+{{--                            </div>--}}
 
 {{--                            @can('editRoles', $dataTypeContent)--}}
                                 <div class="form-group">

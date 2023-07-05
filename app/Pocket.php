@@ -16,4 +16,10 @@ class Pocket extends Model
         'price',
         'percent',
     ];
+
+    public static function getAll()
+    {
+        return Pocket::all();
+    }
+
 }
