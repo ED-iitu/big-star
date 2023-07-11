@@ -1,89 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pt-5 mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Регистрация</div>
-                @if(Session::has('error'))
-                    <div class="alert alert-danger">
-                        {{ Session::get('error') }}
-                    </div>
-                @endif
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <input type="hidden" name="invite_code" value="{{ $inviteCode }}">
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">ФИО</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
+    <section class="vh-80">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-9">
+                    <h1 class="mb-4">Регистрация</h1>
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('error') }}
+                        </div>
+                    @endif
+                    <div class="card" style="border-radius: 10px;">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <input type="hidden" name="invite_code" value="{{ $inviteCode }}">
+                            <div class="card-body">
+                                <div class="row align-items-center pt-4 pb-3">
+                                    <div class="col-md-3 ps-5">
+                                        <h6 class="mb-0">ФИО</h6>
+                                    </div>
+                                <div class="col-md-9 pe-5">
+                                    <input id="name" type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">Телефон</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input id="phone" type="text" class="form-control form-control-lg @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                    @error('phone')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">Телефон</label>
-
-                            <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
-                                @error('phone')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">Пароль</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">Подтвердите пароль</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" required autocomplete="new-password">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Подтверждение пароля</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <hr class="mx-n3">
+                            <div class="px-5 py-4">
+                                <button type="submit" class="btn btn-primary btn-lg">
                                     Создать аккаунт
                                 </button>
-
+                                
                                 @if (Route::has('login'))
                                     <a class="btn btn-link" href="{{ route('login') }}">
                                         Уже есть аккаунт
                                     </a>
                                 @endif
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

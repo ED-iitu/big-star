@@ -1,126 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>BigStar messenger - Главная</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-</head>
+        <!-- Template Main CSS File -->
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
 <body>
 <div id="app">
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-            <h1 class="logo"><a href="/">BIG-STAR</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+            <span>BigStar</span>
+        </a>
 
-            <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
+            <ul>
+            <li><a class="nav-link scrollto active" href="#hero">{{trans('home.main')}}</a></li>
+            <li><a class="nav-link scrollto" href="#about">О нас</a></li>
+            <li><a class="nav-link scrollto" href="#about">{{trans('home.packages')}}</a></li>
+            <li><a class="nav-link scrollto" href="#services">{{trans('home.app')}}</a></li>
+            <li><a href="nav-link scrollto" href="#services">Новости</a></li>
+            <li><a class="nav-link scrollto" href="#portfolio">{{trans('home.contacts')}}</a></li>
+            <li class="dropdown"><a href="#"><span>Русский</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/">{{trans('home.main')}}</a></li>
-                    <li><a class="nav-link scrollto" href="/#pricing">{{trans('home.packages')}}</a></li>
-                    <li><a class="nav-link scrollto" href="/#clients">{{trans('home.app')}}</a></li>
-                    <li><a class="nav-link scrollto" href="/#contact">{{trans('home.contacts')}}</a></li>
-                    @if(Auth::user())
-                        <li class="dropdown"><a href="#"><span>{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="{{route('profile')}}">{{trans('home.profile')}}</a></li>
-                                <li><a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{trans('home.logout')}}</a></li>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </ul>
-                        </li>
-                    @else
-                        <li><a class="getstarted" href="{{route('register')}}">{{trans('home.create')}}</a></li>
-                    @endif
-                    <li class="dropdown"><a href="#"><span> {{__('languages.' . app()->getLocale())}}</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
-                            <li><a href="{{route('setLocale', 'kz')}}">Қазақ</a></li>
-                            <li><a href="{{route('setLocale', 'en')}}">English</a></li>
-                            <li><a href="{{route('setLocale', 'tr')}}">Türkçe</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>{{Session::get('currency') ?? 'KZT'}}</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
-                            <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>
-                            <li><a href="{{route('setCurrency', 'RUB')}}">RUB</a></li>
-                            <li><a href="{{route('setCurrency', 'TRY')}}">TRY</a></li>
-                        </ul>
-                    </li>
-
+                <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
+                <li><a href="{{route('setLocale', 'kz')}}">Қазақ</a></li>
+                <li><a href="{{route('setLocale', 'en')}}">English</a></li>
+                <li><a href="{{route('setLocale', 'tr')}}">Türkçe</a></li>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            </li>
+            <li class="dropdown"><a href="#"><span>KZT</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
+                <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>
+                <li><a href="{{route('setCurrency', 'RUB')}}">RUB</a></li>
+                <li><a href="{{route('setCurrency', 'TRY')}}">TRY</a></li>
+                </ul>
+            </li>
+                @if(Auth::user())
+                <li class="dropdown"><a href="#"><span>{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{route('profile')}}">{{trans('home.profile')}}</a></li>
+                        <li><a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                            {{trans('home.logout')}}</a></li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </ul>
+                </li>
+                @else
+                <li><a class="getstarted scrollto" href="{{route('register')}}">{{trans('home.create')}}</a></li>
+                @endif
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
         </div>
     </header><!-- End Header -->
+
 
     <main class="py-4">
         @yield('content')
     </main>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
 
+  <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
         <div class="footer-top">
             <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        <h3>BIG-STAR</h3>
-                        <p>
-                            Республика Казахстан<br>
-                            г. Алматы, ул. Абая 151<br>
-                            Бизнес-Центр "Алатау"<br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <img src="assets/img/logo.png" alt="">
+                            <span>BigStar</span>
+                        </a>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-2 col-6 footer-links">
                         <h4>Навигация</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Пакеты</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Контакты</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-2 col-6 footer-links">
                         <h4>Мои ссылки</h4>
                         <ul>
                             @if(Auth::user())
@@ -133,33 +132,27 @@
                             @endif
                         </ul>
                     </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Контакты</h4>
+                        <p>
+                            <strong>Адрес:</strong> РК г. Алматы, ул. Оспанова 26<br>
+                            <strong>Телефон:</strong> +7 747 360 38 17
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="container d-md-flex py-4">
-
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>big-star.kz</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-
-                </div>
-            </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>big-star.kz</span></strong>. All Rights Reserved
             </div>
         </div>
     </footer><!-- End Footer -->
-
-    <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-</div>
 
 <!-- Vendor JS Files -->
+<script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
 <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/vendor/glightbox/js/glightbox.js')}}"></script>
