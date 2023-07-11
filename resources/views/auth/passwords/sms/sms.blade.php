@@ -1,38 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-5 pt-5">
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if (session()->has('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Сброс пароля</div>
-
-                    <div class="card-body">
+    <section class="vh-80">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-9">
+                    <h1 class="mb-4">Сброс пароля</h1>
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <div class="card" style="border-radius: 10px;">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         <form method="POST" action="{{ route('password.sendResetSmsCode') }}">
                             @csrf
-
-                            <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">Телефон</label>
-
-                                <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
+                            <div class="card-body">
+                                <div class="row align-items-center pt-4 pb-3">
+                                    <div class="col-md-3 ps-5">
+                                        <h6 class="mb-0">Номер телефона</h6>
+                                    </div>
+                                <div class="col-md-9 pe-5">
+                                    <input id="phone" type="text" class="form-control form-control-lg @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus maxlength="20">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -40,13 +38,10 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Отправить смс
-                                    </button>
-                                </div>
+                            <div class="px-5 py-4">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Отправить
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -54,4 +49,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
