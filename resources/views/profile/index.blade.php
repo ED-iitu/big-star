@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div class="container p-0 mt-5 pt-5">
     @if (session('success'))
@@ -281,5 +282,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.list-group-item').on('click', function(e) {
+            e.preventDefault(); // Prevent the default link behavior
+            $('.list-group-item').removeClass('active');
+            $(this).addClass('active');
+            var target = $(this).attr('href'); // Get the target tab content
+            $('.tab-pane').removeClass('show active');
+            $(target).addClass('show active');
+        });
+    });
+</script>
 
 @endsection
