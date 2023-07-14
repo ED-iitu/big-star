@@ -309,9 +309,10 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="profile mt-auto">
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                                <h3>Адилов Темирлан</h3>
+                                <img src="assets/img/testimonials/presenter-1.jpeg" class="testimonial-img" alt="">
+                                <h3>Абдрашитова Юлия Наильевнеа</h3>
                                 <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
                             </div>
                             <p>
                                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -322,9 +323,10 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="profile mt-auto">
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                                <h3>Алиев Алмат</h3>
+                                <img src="assets/img/testimonials/presenter-2.jpeg" class="testimonial-img" alt="">
+                                <h3>Разметова Шолпан</h3>
                                 <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Атырау</h4>
                             </div>
                             <p>
                                 Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -335,9 +337,10 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="profile mt-auto">
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                                <h3>Ахметов Канат</h3>
+                                <img src="assets/img/testimonials/presenter-3.jpeg" class="testimonial-img" alt="">
+                                <h3>Аувелкан Архат Дастанулы</h3>
                                 <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Павлодар</h4>
                             </div>
                             <p>
                                 Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -348,9 +351,10 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="profile mt-auto">
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                                <h3>Ералы Абылай</h3>
+                                <img src="assets/img/testimonials/presenter-4.jpeg" class="testimonial-img" alt="">
+                                <h3>Бокаев Мереке Казиевич</h3>
                                 <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
                             </div>
                             <p>
                                 Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -361,9 +365,66 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="profile mt-auto">
-                                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                                <h3>Бауржанулы Султан</h3>
+                                <img src="assets/img/testimonials/presenter-5.jpeg" class="testimonial-img" alt="">
+                                <h3>Дорошенко Людмила Васильевна</h3>
                                 <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
+                            </div>
+                            <p>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="profile mt-auto">
+                                <img src="assets/img/testimonials/presenter-6.jpeg" class="testimonial-img" alt="">
+                                <h3>Кадырбаева Мерует Кебековна</h3>
+                                <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
+                            </div>
+                            <p>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="profile mt-auto">
+                                <img src="assets/img/testimonials/presenter-7.jpeg" class="testimonial-img" alt="">
+                                <h3>Даудрих Елена Викторовна</h3>
+                                <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
+                            </div>
+                            <p>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="profile mt-auto">
+                                <img src="assets/img/testimonials/presenter-8.jpeg" class="testimonial-img" alt="">
+                                <h3>Кузенбаева Гульбар Исхаковна</h3>
+                                <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
+                            </div>
+                            <p>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="profile mt-auto">
+                                <img src="assets/img/testimonials/presenter-9.jpeg" class="testimonial-img" alt="">
+                                <h3>Кожанбердина Жанат Кадировна</h3>
+                                <h4>Презентер</h4>
+                                <h4 class="mt-20">г. Темиртау</h4>
                             </div>
                             <p>
                                 Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
@@ -480,61 +541,45 @@
             </header>
 
             <div class="row gy-4">
+                <div class="col-lg-12">
+                    <div class="row gy-4">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bi bi-geo-alt"></i>
+                                <h3>Адреса и телефоны офисов</h3>
+                                <p>
+                                    <strong>Головной офис г.Алматы,</strong> ул. Оспанова 26. Тел: +7 747 360 38 17<br>
+                                    <strong>Филиал в г.Алматы,</strong> БЦ Алатау 610 офис. Тел: +7 776 518 76 70<br>
+                                    <strong>Филиал в г.Астана,</strong> ул.Иманова 19, Деловой Дом "Алматы", 7 этаж, № 709 офис. Тел: +7 747 602 14 03<br>
+                                    <strong>Филиал в г.Караганда,</strong> ул.Гоголя 34/2, Бизнес Центр "Прайм", № 201 офис.	Тел: +7 747 360 38 21<br>
+                                    <strong>Филиал в г.Темиртау,</strong> 6 мкр, 20 дом, ТД "Талис". Тел: +7 708 395 62 15, +7 701 282 91 85<br>
+                                    <strong>Филиал в г.Атырау,</strong> ул.Жарбосынова 62, рядом ТЦ «Байзар». Тел: +7 778 246 35 66<br>
+                                    <strong>Филиал в г.Павлодар,</strong> ул.Сатпаева 71, БЦ «Казахстан», № 102 офис. Тел: +7 705 385 74 88, +7 778 842 86 94<br>
+                                    <strong>Филиал в г.Уральск,</strong> Бизнес Центр "Мухита" 78, 2 этаж, № 205 офис. Тел: +7 747 679 73 96<br>
+                                    <strong>Филиал в г.Актобе,</strong> БЦ "Мир", ул.Абилхаир Хана 85, 4 этаж, № 411 офис. Тел: +7 776 680 44 88, +7 747 365 51 75<br>
+                                    <strong>Филиал в г.Балхаш,</strong> ул.М.Казыбековой, 24. Тел: +7 776 234 1189
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-6">
                     <div class="row gy-4">
                         <div class="col-md-6">
                             <div class="info-box">
-                                <i class="bi bi-geo-alt"></i>
-                                <h3>Адрес</h3>
-                                <p>г.Алматы, ул. Оспанова 26<br>г.Алматы, БЦ Алатау 610 офис</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box">
-                                <i class="bi bi-telephone"></i>
-                                <h3>Телефон</h3>
-                                <p>+7 747 360 38 17<br>+7 776 518 76 70</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box">
                                 <i class="bi bi-envelope"></i>
-                                <h3>Email Us</h3>
+                                <h3>Email</h3>
                                 <p>info@example.com<br>contact@example.com</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box">
                                 <i class="bi bi-clock"></i>
-                                <h3>Open Hours</h3>
-                                <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                                <h3>График работы</h3>
+                                <p>Понедельник - Пятница<br>9:00 - 18:00</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" class="php-email-form">
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                            </div>
-
-                            <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                            </div>
-
-                            <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                                <button type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

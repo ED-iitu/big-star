@@ -112,7 +112,7 @@
                         <h4>Навигация</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="/">Главная</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Пакеты/a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Пакеты</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Скачать приложение</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Контакты</a></li>
                         </ul>
