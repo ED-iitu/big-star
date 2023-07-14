@@ -41,7 +41,7 @@
             <li><a class="nav-link scrollto active" href="/">{{trans('home.main')}}</a></li>
             <li><a class="nav-link scrollto" href="/#pricing">{{trans('home.packages')}}</a></li>
             <li><a class="nav-link scrollto" href="/#app">{{trans('home.app')}}</a></li>
-            <li><a href="nav-link scrollto" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
+            <li><a class="nav-link scrollto" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
             <li><a class="nav-link scrollto" href="/#contact">{{trans('home.contacts')}}</a></li>
             <li class="dropdown"><a href="#"><span>Русский</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
