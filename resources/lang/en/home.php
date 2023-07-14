@@ -3,7 +3,8 @@
 return [
     'main' => 'Home',
     'packages' => 'Packages',
-    'app' => 'Download',
+    'app' => 'Download App',
+    'news' => 'News',
     'contacts' => 'Contacts',
     'profile' => 'Profile',
     'logout' => 'Logout',

@@ -38,12 +38,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto active" href="/#hero">{{trans('home.main')}}</a></li>
-            <li><a class="nav-link scrollto" href="#about">О нас</a></li>
-            <li><a class="nav-link scrollto" href="#about">{{trans('home.packages')}}</a></li>
-            <li><a class="nav-link scrollto" href="#services">{{trans('home.app')}}</a></li>
-            <li><a href="nav-link scrollto" href="#services">Новости</a></li>
-            <li><a class="nav-link scrollto" href="#portfolio">{{trans('home.contacts')}}</a></li>
+            <li><a class="nav-link scrollto active" href="/">{{trans('home.main')}}</a></li>
+            <li><a class="nav-link scrollto" href="/#pricing">{{trans('home.packages')}}</a></li>
+            <li><a class="nav-link scrollto" href="/#app">{{trans('home.app')}}</a></li>
+            <li><a href="nav-link scrollto" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
+            <li><a class="nav-link scrollto" href="/#contact">{{trans('home.contacts')}}</a></li>
             <li class="dropdown"><a href="#"><span>Русский</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
@@ -112,10 +111,10 @@
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Навигация</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="/">Главная</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Пакеты/a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Скачать приложение</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Контакты</a></li>
                         </ul>
                     </div>
 

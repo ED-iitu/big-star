@@ -4,6 +4,7 @@ return [
     'main' => 'Ev',
     'packages' => 'Paketler',
     'app' => 'İndir uygulaması',
+    'news' => 'Haberler',
     'contacts' => 'Kişiler',
     'profile' => 'Profil',
     'logout' => 'Dışarı çıkmak',

@@ -173,58 +173,9 @@
                             </div>
                         @endforeach
                     @endif
-
-                <div class="row gy-4" data-aos="fade-left" style="margin-top: 1rem;">
-
-                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="box">
-                            <span class="featured">Выгодный</span>
-                            <h3>Пакет №5</h3>
-                            <div class="price">2 000 000<span> KZT</span></div>
-                            <ul>
-                                <li>Кол-во ежемесячного поступления 0,002%</li>
-                            </ul>
-                            <a href="#" class="btn-buy">Купить</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="box">
-                            <h3>Пакет №6</h3>
-                            <div class="price">5 000 000<span> KZT</span></div>
-                            <ul>
-                                <li>Кол-во ежемесячного поступления 0,005%</li>
-                            </ul>
-                            <a href="#" class="btn-buy">Купить</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="box">
-                            <h3>Пакет №7</h3>
-                            <div class="price">10 000 000<span> KZT</span></div>
-                            <ul>
-                                <li>Кол-во ежемесячного поступления 0,01%</li>
-                            </ul>
-                            <a href="#" class="btn-buy">Купить</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="box">
-                            <span class="featured">Большой</span>
-                            <h3>Пакет №8</h3>
-                            <div class="price">20 000 000<span> KZT</span></div>
-                            <ul>
-                                <li>Кол-во ежемесячного поступления 0,02%</li>
-                            </ul>
-                            <a href="#" class="btn-buy">Купить</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            </section>
+            </section id="app">
                 <div class="row feature-icons" data-aos="fade-up">
                     <h3>Как скачать приложение?</h3>
                     <div class="row">
