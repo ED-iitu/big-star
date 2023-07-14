@@ -124,9 +124,6 @@
                         </div>
                     </div>
 
-                </div>
-{{--                PASSWORD--}}
-                <div class="tab-pane fade" id="password" role="tabpanel">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Смена пароля</h5>
@@ -150,10 +147,7 @@
 
                         </div>
                     </div>
-                </div>
 
-{{--                TRANSACTION--}}
-                <div class="tab-pane fade" id="transaction" role="tabpanel">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Транзикции</h5>
@@ -190,9 +184,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="tab-pane fade" id="withdraw" role="tabpanel">
+
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Вывод денег</h5>
@@ -262,6 +255,27 @@
                             </div>
                         </div>
                     </div>
+
+
+
+                    
+
+
+
+
+                </div>
+{{--                PASSWORD--}}
+                <div class="tab-pane fade" id="password" role="tabpanel">
+                    
+                </div>
+
+{{--                TRANSACTION--}}
+                <div class="tab-pane fade" id="transaction" role="tabpanel">
+                    
+                </div>
+
+                <div class="tab-pane fade" id="withdraw" role="tabpanel">
+                    
                 </div>
             </div>
         </div>
