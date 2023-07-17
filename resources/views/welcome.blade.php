@@ -176,7 +176,7 @@
                 </div>
             </section>
 
-            </section id="app">
+            <section id="app">
                 <div class="row feature-icons" data-aos="fade-up">
                     <h3>Как скачать приложение?</h3>
                     <div class="row">
