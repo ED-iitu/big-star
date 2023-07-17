@@ -119,9 +119,10 @@
 {{--                PASSWORD--}}
                 <div class="tab-pane fade" id="password" role="tabpanel">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Смена пароля</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Смена пароля</h5>
-
                             <form method="POST" action="{{route('profile.updatePassword')}}">
                                 @csrf
                                 <div class="form-group mt-10">
@@ -146,8 +147,10 @@
 {{--                TRANSACTION--}}
                 <div class="tab-pane fade" id="transaction" role="tabpanel">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Транзакции</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Транзикции</h5>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tbody><tr>
@@ -185,9 +188,10 @@
 
                 <div class="tab-pane fade" id="withdraw" role="tabpanel">
                     <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Вывод денег</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Вывод денег</h5>
-
                             <form method="POST" action="{{route('user.createWithdraw')}}">
                                 @csrf
                                 <div class="form-group">

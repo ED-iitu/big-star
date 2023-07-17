@@ -30,14 +30,14 @@
                 <div class="row gx-0">
                     <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                         <div class="content">
-                            <h3>О нас</h3>
-                            <h2>Big Star Messenger - это №1 отечественный мессенджер KZ</h2>
+                            <h3>{{trans('home.aboutus')}}</h3>
+                            <h2>{{trans('home.aboutussubtitle')}}</h2>
                             <p>
-                                Мы предоставляем уникальное приложения для наших пользователей, авторское право запентовано в 179 странах мира и мы являемся резидентом Astana Hub
+                                {{trans('home.aboutusdescription')}}
                             </p>
                             <div class="text-center text-lg-start">
                                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>Смотреть видео</span>
+                                <span>{{trans('home.aboutusvideo')}}</span>
                                 <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
@@ -58,7 +58,7 @@
                         <i class="bi bi-emoji-smile"></i>
                         <div>
                             <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Лет на рынке</p>
+                            <p>{{trans('home.countsyears')}}</p>
                         </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
                         <div>
                             <span data-purecounter-start="0" data-purecounter-end="179" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Странах</p>
+                            <p>{{trans('home.countscountry')}}</p>
                         </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             <i class="bi bi-headset" style="color: #15be56;"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="30000" data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Рекламных кампаний</p>
+                                <p>{{trans('home.countsadd')}}</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <i class="bi bi-people" style="color: #bb0852;"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="780000" data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Пользователей</p>
+                                <p>{{trans('home.countsusers')}}</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
     <section id="features" class="features">
         <div class="container" data-aos="fade-up">
             <header class="section-header">
-                <p>Преимущества нашего мессенджера</p>
+                <p>{{trans('home.featurestitle')}}</p>
             </header>
             <div class="row">
                 <div class="col-lg-4">
@@ -108,42 +108,42 @@
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Облачное хранилище с возможностью увеличения объема</h3>
+                                <h3>{{trans('home.featuresfirst')}}</h3>
                             </div>
                         </div>
 
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Отправка документов, фото и видео больших размеров без сжатия</h3>
+                                <h3>{{trans('home.featuressecond')}}</h3>
                             </div>
                         </div>
 
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Неограниченное время для проведения видеоконференций</h3>
+                                <h3>{{trans('home.featuresthird')}}</h3>
                             </div>
                         </div>
 
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Мульти-переводчик более чем на 179 языков мира</h3>
+                                <h3>{{trans('home.featuresfourth')}}</h3>
                             </div>
                         </div>
 
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Демонстрация экрана и видеокамеры, для полного удобства</h3>
+                                <h3>{{trans('home.featuresfive')}}</h3>
                             </div>
                         </div>
 
                         <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
                             <div class="feature-box d-flex align-items-center">
                                 <i class="bi bi-check"></i>
-                                <h3>Секретные сообщения с кодировкой, сообщения зашифрованы</h3>
+                                <h3>{{trans('home.featuressix')}}</h3>
                             </div>
                         </div>
                     </div>
@@ -154,20 +154,20 @@
             <section id="pricing" class="pricing">
                 <div class="container" data-aos="fade-up">
                     <header class="section-header">
-                        <p>Пакеты</p>
+                        <p>{{trans('home.packages')}}</p>
                     </header>
                     <div class="row gy-4" data-aos="fade-left">
                         @if(!empty($packages))
                             @foreach($packages as $package)
                                 <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                                     <div class="box">
-                                        <span class="featured">Выгодный</span>
+                                        <span class="featured">{{trans('home.offer')}}</span>
                                         <h3>{{$package->getTranslatedAttribute('title', Session::get('locale'), 'fallbackLocale')}}</h3>
                                         <div class="price">{{intval($package->price * $currencyData[Session::get('currency')])}}<span> {{Session::get('currency')}}</span></div>
                                         <ul>
                                             <li>{{$package->getTranslatedAttribute('description', Session::get('locale'), 'fallbackLocale')}}</li>
                                         </ul>
-                                        <a href="{{route('package', $package->id)}}" class="btn-buy">Купить</a>
+                                        <a href="{{route('package', $package->id)}}" class="btn-buy">{{trans('home.buy')}}</a>
                                     </div>
                                 </div>
                             @endforeach

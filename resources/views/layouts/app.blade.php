@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>BigStar messenger - Главная</title>
+        <title>big-star.kz</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
 
@@ -94,12 +94,17 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row gy-4">
-                    <div class="col-lg-5 col-md-12 footer-info">
+                    <div class="col-lg-4 col-md-12 footer-info">
                         <a href="/" class="logo d-flex align-items-center">
                             <img src="{{asset('assets/img/logo.png')}}" alt="">
                             <span>BigStar</span>
                         </a>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="col-lg-12 col-md-12 footer-contact text-center text-md-start">
+                            <p>
+                                <strong>{{trans('home.adress')}}:</strong> {{trans('home.kzadress')}}<br>
+                                <strong>{{trans('home.phone')}}:</strong> {{trans('home.kzphone')}} 
+                            </p>
+                        </div>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -108,36 +113,29 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-6 footer-links">
+                    <div class="col-lg-4 col-6 footer-links">
                         <h4>Навигация</h4>
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="/">Главная</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Пакеты</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Скачать приложение</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Контакты</a></li>
+                            <li><a href="/">{{trans('home.main')}}</a></li>
+                            <li><a href="/#pricing">{{trans('home.packages')}}</a></li>
+                            <li><a href="/#app">{{trans('home.app')}}</a></li>
+                            <li><a href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
+                            <li><a href="/#contact">{{trans('home.contacts')}}</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-2 col-6 footer-links">
+                    <div class="col-lg-4 col-6 footer-links">
                         <h4>Мои ссылки</h4>
                         <ul>
                             @if(Auth::user())
-                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">Профиль</a></li>
-                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">История</a></li>
-                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">Вывод денег</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">{{trans('home.profile')}}</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">{{trans('home.history')}}</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{route('profile')}}">{{trans('home.cashout')}}</a></li>
                             @else
-                                <li><i class="bx bx-chevron-right"></i><a href="{{route('register')}}">Создать аккаунт</a></li>
-                                <li><i class="bx bx-chevron-right"></i><a href="{{route('login')}}">Войти</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{route('register')}}">{{trans('home.create')}}</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{route('login')}}">{{trans('home.login')}}</a></li>
                             @endif
                         </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                        <h4>Контакты</h4>
-                        <p>
-                            <strong>Адрес:</strong> РК г. Алматы, ул. Оспанова 26<br>
-                            <strong>Телефон:</strong> +7 747 360 38 17
-                        </p>
                     </div>
                 </div>
             </div>
