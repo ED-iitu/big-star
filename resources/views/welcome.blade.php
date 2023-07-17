@@ -176,81 +176,18 @@
                 </div>
             </section>
 
-            <section id="app">
-                <div class="row feature-icons" data-aos="fade-up">
-                    <h3>Как скачать приложение?</h3>
-                    <div class="row">
-                        <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-                            <img src="assets/img/features-3.png" class="img-fluid p-4" alt="">
-                        </div>
-                        <div class="col-xl-8 d-flex content">
-                            <div class="row align-self-center gy-4">
-                                <div class="col-md-6 icon-box" data-aos="fade-up">
-                                    <i class="ri-line-chart-line"></i>
-                                    <div>
-                                        <h4>AppStore и PlayMarket</h4>
-                                        <p>Наше приложение достпуно как и для IOS, так и для Android устройств</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                    <i class="ri-stack-line"></i>
-                                    <div>
-                                        <h4>Ullamco laboris nisi</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                    <i class="ri-brush-4-line"></i>
-                                    <div>
-                                        <h4>Labore consequatur</h4>
-                                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                    <i class="ri-magic-line"></i>
-                                    <div>
-                                        <h4>Beatae veritatis</h4>
-                                        <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                    <i class="ri-command-line"></i>
-                                    <div>
-                                        <h4>Molestiae dolor</h4>
-                                        <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                                    <i class="ri-radar-line"></i>
-                                    <div>
-                                        <h4>Explicabo consectetur</h4>
-                                        <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Видеоинструкция</h2>
+                    <h2>{{trans('home.introvideo')}}</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">Все</li>
-                            <li data-filter=".filter-app">Сайт Big-Star.kz</li>
-                            <li data-filter=".filter-card">Мессенджер</li>
+                            <li data-filter="*" class="filter-active">{{trans('home.all')}}</li>
+                            <li data-filter=".filter-app">{{trans('home.website')}}</li>
+                            <li data-filter=".filter-card">{{trans('home.meesenger')}}</li>
                         </ul>
                     </div>
                 </div>
@@ -269,7 +206,7 @@
         <section id="recent-blog-posts" class="recent-blog-posts">
             <div class="container" data-aos="fade-up">
                 <header class="section-header">
-                    <p>Новости</p>
+                    <p>{{trans('home.news')}}</p>
                 </header>
                 <div class="row">
                     @if(!empty($news))
@@ -280,7 +217,7 @@
                                     <span class="post-date">{{$post->date}}</span>
                                     <h3 class="post-title">{{$post->title}}</h3>
                                     <div class="btn-wrap">
-                                        <a href="{{route('news', $post->id)}}" class="readmore stretched-link mt-auto"><span>Читать</span><i class="bi bi-arrow-right"></i></a>
+                                        <a href="{{route('news', $post->id)}}" class="readmore stretched-link mt-auto"><span>{{trans('home.read')}}</span><i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +230,7 @@
         <section id="testimonials" class="testimonials">
             <div class="container" data-aos="fade-up">
                 <header class="section-header">
-                    <p>Наша команда</p>
+                    <p>{{trans('home.team')}}</p>
                 </header>
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
                     <div class="swiper-wrapper">
@@ -301,13 +238,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-1.jpeg" class="testimonial-img" alt="">
-                                    <h3>Абдрашитова Юлия Наильевнеа</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter1')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                </p>
                             </div>
                         </div>
 
@@ -315,13 +249,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-2.jpeg" class="testimonial-img" alt="">
-                                    <h3>Разметова Шолпан</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Атырау</h4>
+                                    <h3>{{trans('home.presenter2')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityAtyrau')}}</h4>
                                 </div>
-                                <p>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                </p>
                             </div>
                         </div>
 
@@ -329,13 +260,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-3.jpeg" class="testimonial-img" alt="">
-                                    <h3>Аувелкан Архат Дастанулы</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Павлодар</h4>
+                                    <h3>{{trans('home.presenter3')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityPavlodar')}}</h4>
                                 </div>
-                                <p>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                </p>
                             </div>
                         </div>
 
@@ -343,13 +271,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-4.jpeg" class="testimonial-img" alt="">
-                                    <h3>Бокаев Мереке Казиевич</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter4')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                </p>
                             </div>
                         </div>
 
@@ -357,13 +282,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-5.jpeg" class="testimonial-img" alt="">
-                                    <h3>Дорошенко Людмила Васильевна</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter5')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
                             </div>
                         </div>
 
@@ -371,13 +293,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-6.jpeg" class="testimonial-img" alt="">
-                                    <h3>Кадырбаева Мерует Кебековна</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter6')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
                             </div>
                         </div>
 
@@ -385,13 +304,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-7.jpeg" class="testimonial-img" alt="">
-                                    <h3>Даудрих Елена Викторовна</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter7')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
                             </div>
                         </div>
 
@@ -399,13 +315,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-8.jpeg" class="testimonial-img" alt="">
-                                    <h3>Кузенбаева Гульбар Исхаковна</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter8')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
                             </div>
                         </div>
 
@@ -413,13 +326,10 @@
                             <div class="testimonial-item">
                                 <div class="profile mt-auto">
                                     <img src="assets/img/testimonials/presenter-9.jpeg" class="testimonial-img" alt="">
-                                    <h3>Кожанбердина Жанат Кадировна</h3>
-                                    <h4>Презентер</h4>
-                                    <h4 class="mt-20">г. Темиртау</h4>
+                                    <h3>{{trans('home.presenter9')}}</h3>
+                                    <h4>{{trans('home.presenter')}}</h4>
+                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
                                 </div>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -432,7 +342,7 @@
         <section id="faq" class="faq">
             <div class="container" data-aos="fade-up">
                 <header class="section-header">
-                    <p>Вопрос - Ответ</p>
+                    <p>{{trans('home.faq')}}</p>
                 </header>
                 <div class="row">
                     <div class="col-lg-6">
@@ -528,7 +438,7 @@
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
                 <header class="section-header">
-                    <p>Контакты</p>
+                    <p>{{trans('home.contacts')}}</p>
                 </header>
 
                 <div class="row gy-4">
@@ -537,7 +447,7 @@
                             <div class="col-md-12">
                                 <div class="info-box">
                                     <i class="bi bi-geo-alt"></i>
-                                    <h3>Адреса и телефоны офисов</h3>
+                                    <h3>{{trans('home.adressandphone')}}</h3>
                                     <p>
                                         <strong>Головной офис г.Алматы,</strong> ул. Оспанова 26. Тел: +7 747 360 38 17<br>
                                         <strong>Филиал в г.Алматы,</strong> БЦ Алатау 610 офис. Тел: +7 776 518 76 70<br>
@@ -566,8 +476,8 @@
                             <div class="col-md-6">
                                 <div class="info-box">
                                     <i class="bi bi-clock"></i>
-                                    <h3>График работы</h3>
-                                    <p>Понедельник - Пятница<br>9:00 - 18:00</p>
+                                    <h3>{{trans('home.worktime')}}</h3>
+                                    <p>{{trans('home.weekdays')}}<br>9:00 - 18:00</p>
                                 </div>
                             </div>
                         </div>
