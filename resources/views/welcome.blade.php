@@ -159,7 +159,6 @@
                     <div class="row gy-4" data-aos="fade-left">
                         @if(!empty($packages))
                             @foreach($packages as $package)
-                                <div class="row gy-4" data-aos="fade-left">
                                 <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                                     <div class="box">
                                         <span class="featured">{{$package->getTranslatedAttribute('tag', Session::get('locale'), 'fallbackLocale')??'Выгодный'}}</span>
