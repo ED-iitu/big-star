@@ -43,15 +43,15 @@
             <li><a class="nav-link scrollto" href="/#app">{{trans('home.app')}}</a></li>
             <li><a class="nav-link scrollto" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
             <li><a class="nav-link scrollto" href="/#contact">{{trans('home.contacts')}}</a></li>
-            <li class="dropdown"><a href="#"><span>Русский</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>{{__('languages.' . app()->getLocale())}}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
-                <li><a href="{{route('setLocale', 'kz')}}">Қазақ</a></li>
-                <li><a href="{{route('setLocale', 'en')}}">English</a></li>
-                <li><a href="{{route('setLocale', 'tr')}}">Türkçe</a></li>
+                    <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
+                    <li><a href="{{route('setLocale', 'kz')}}">Қазақ</a></li>
+                    <li><a href="{{route('setLocale', 'en')}}">English</a></li>
+                    <li><a href="{{route('setLocale', 'tr')}}">Türkçe</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>KZT</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>{{Session::get('currency') ?? 'KZT'}}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
                 <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>

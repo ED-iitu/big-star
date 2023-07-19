@@ -59,7 +59,7 @@ class HomeController extends Controller
         }
 
         $packages     = Pocket::all();
-        $news         = Post::all();
+        $news         = Post::latest()->take(3)->get();
         $currencyData = Currency::converter();
         $videos       = Video::all();
 
@@ -69,7 +69,8 @@ class HomeController extends Controller
     public function getNewsById(int $id)
     {
         $news = Post::where('id', $id)->first();
+        $AllNews = Post::all();
 
-        return view('news', compact('news'));
+        return view('news', compact('news', 'AllNews'));
     }
 }

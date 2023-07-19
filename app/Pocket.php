@@ -8,11 +8,12 @@ class Pocket extends Model
 {
     use Translatable;
 
-    protected $translatable = ['title', 'description'];
+    protected $translatable = ['title', 'description', 'tag'];
 
     protected $fillable = [
         'title',
         'description',
+        'tag',
         'price',
         'percent',
     ];

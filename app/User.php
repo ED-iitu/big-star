@@ -79,4 +79,9 @@ class User extends \TCG\Voyager\Models\User
 
         return $user ?? null;
     }
+
+    public static function getAllPresenters()
+    {
+        return User::where('role_id', User::ROLE_PRESENTER)->get();
+    }
 }

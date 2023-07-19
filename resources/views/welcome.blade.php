@@ -159,9 +159,10 @@
                     <div class="row gy-4" data-aos="fade-left">
                         @if(!empty($packages))
                             @foreach($packages as $package)
+                                <div class="row gy-4" data-aos="fade-left">
                                 <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                                     <div class="box">
-                                        <span class="featured">{{trans('home.offer')}}</span>
+                                        <span class="featured">{{$package->getTranslatedAttribute('tag', Session::get('locale'), 'fallbackLocale')??'Выгодный'}}</span>
                                         <h3>{{$package->getTranslatedAttribute('title', Session::get('locale'), 'fallbackLocale')}}</h3>
                                         <div class="price">{{intval($package->price * $currencyData[Session::get('currency')])}}<span> {{Session::get('currency')}}</span></div>
                                         <ul>
@@ -234,104 +235,19 @@
                 </header>
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-1.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter1')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
+                        @if(!empty(\App\User::getAllPresenters()))
+                            @foreach(\App\User::getAllPresenters() as $user)
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="profile mt-auto">
+                                            <img src="assets/img/testimonials/presenter-2.jpeg" class="testimonial-img" alt="">
+                                            <h3>{{ $user->name }}</h3>
+                                            <h4>{{trans('home.presenter')}}</h4>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-2.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter2')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityAtyrau')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-3.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter3')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityPavlodar')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-4.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter4')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-5.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter5')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-6.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter6')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-7.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter7')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-8.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter8')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/presenter-9.jpeg" class="testimonial-img" alt="">
-                                    <h3>{{trans('home.presenter9')}}</h3>
-                                    <h4>{{trans('home.presenter')}}</h4>
-                                    <h4 class="mt-20">{{trans('home.cityTemirtay')}}</h4>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
