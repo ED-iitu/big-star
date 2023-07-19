@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="text-center mt-10">
-                                            <img alt="Andrew Jones" src="{{asset('/storage/' . Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                            <img src="{{asset('/storage/' . Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
                                             <label class="input-file mt-10">
                                                 <input type="file" name="avatar">		
                                                 <span class="col-lg-12">Выбрать фотографию</span>

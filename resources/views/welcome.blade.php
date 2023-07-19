@@ -240,7 +240,7 @@
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
                                         <div class="profile mt-auto">
-                                            <img src="assets/img/testimonials/presenter-2.jpeg" class="testimonial-img" alt="">
+                                            <img src="{{asset('/storage/' . $user->avatar)}}" class="testimonial-img" alt="">
                                             <h3>{{ $user->name }}</h3>
                                             <h4>{{trans('home.presenter')}}</h4>
                                         </div>
