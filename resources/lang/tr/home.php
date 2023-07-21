@@ -47,16 +47,6 @@ return [
     'adressandphone' => 'Ofislerin adresleri ve telefonları',
     'worktime' => 'Takvim',
     'weekdays' => 'Pazartesi - Cuma',
-    'presenter1' => 'Abdrashitova Ulya Nailevnea',
-    'presenter2' => 'Razmetova Sholpan',
-    'presenter3' => 'Auvelkan Arhat Dastanuly',
-    'presenter4' => 'Bokaev Mereke Kazievich',
-    'presenter5' => 'Doroshenko Lyudmila Vasilievna',
-    'presenter6' => 'Kadyrbaeva Meruet Kebekovna',
-    'presenter7' => 'Daudrich Elena Viktorovna',
-    'presenter8' => 'Kuzenbayeva Gulbar',
-    'presenter9' => 'Kozhanberdina Zhanat Kadirovna',
-    'cityTemirtay' => 'Temirtay şehir',
-    'cityPavlodar' => 'Pavlodar şehir',
-    'cityAtyrau' => 'Atyrau şehir'
+    'downloadandroid' => 'Android için indir',
+    'downloadapple' => 'AppStore için indir'
 ];

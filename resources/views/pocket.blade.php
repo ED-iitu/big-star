@@ -4,9 +4,8 @@
     <script src="https://widget.cloudpayments.kz/bundles/cloudpayments.js"></script>
 
     <main id="main">
-        <section id="pricing" class="pricing section-bg">
+        <section id="pricing" class="pricing section-bg vh-80">
             <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                     <h2>Покупка пакета</h2>
                 </div>
@@ -28,17 +27,17 @@
                             <input type="hidden" id="price" value="{{$package->price * $currencyData[Session::get('currency')]}}">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <div class="form-group">
+                                    <div class="form-group mt-10">
                                         <small>Кто пригласил?</small>
-                                        <select class="form-control select2" id="registered_from_value">
+                                        <select class="form-control form-control-lg select2" id="registered_from_value">
                                             @foreach (\App\User::getAll() as $user)
                                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group mt-10">
                                         <small>Презентер</small>
-                                        <select class="form-control select2" id="presenter" name="presenter">
+                                        <select class="form-control form-control-lg select2" id="presenter" name="presenter">
                                             @foreach (\App\User::getPresenters() as $user)
                                                 <option value="{{ $user->id }}" id="presenter_value">{{ $user->name }}</option>
                                             @endforeach
@@ -46,8 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <button type="button" id="payButton" class="btn btn-primary">Купить пакет</button>
+                            <button type="button" id="payButton" class="btn btn-primary mt-20">Купить пакет</button>
                         </form>
                     </div>
                 </div>

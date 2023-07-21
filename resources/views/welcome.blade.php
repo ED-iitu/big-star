@@ -148,6 +148,25 @@
                         </div>
                     </div>
                 </div>
+
+                
+                <div class="col-md-4" data-aos="zoom-out" data-aos-delay="700">
+                    <a href="https://play.google.com/store/apps/details?id=com.bigstar.real&hl=ru&gl=US" target="_blank">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-download"></i>
+                            <h3>{{trans('home.downloadandroid')}}</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out" data-aos-delay="700">
+                    <a href="https://apps.apple.com/kz/app/big-star-messenger/id6443519603" target="_blank">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-download"></i>
+                            <h3>{{trans('home.downloadapple')}}</h3>
+                        </div>
+                    </a>
+                </div>
             </div> <!-- / row -->
 
             <!-- ======= Pricing Section ======= -->

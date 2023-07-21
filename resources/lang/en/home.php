@@ -47,16 +47,6 @@ return [
     'adressandphone' => 'Addresses and phone numbers of offices',
     'worktime' => 'Schedule',
     'weekdays' => 'Monday - Friday',
-    'presenter1' => 'Abdrashitova Ulya Nailevnea',
-    'presenter2' => 'Razmetova Sholpan',
-    'presenter3' => 'Auvelkan Arhat Dastanuly',
-    'presenter4' => 'Bokaev Mereke Kazievich',
-    'presenter5' => 'Doroshenko Lyudmila Vasilievna',
-    'presenter6' => 'Kadyrbaeva Meruet Kebekovna',
-    'presenter7' => 'Daudrich Elena Viktorovna',
-    'presenter8' => 'Kuzenbayeva Gulbar',
-    'presenter9' => 'Kozhanberdina Zhanat Kadirovna',
-    'cityTemirtay' => 'Temirtay city',
-    'cityPavlodar' => 'Pavlodar city',
-    'cityAtyrau' => 'Atyrau city'
+    'downloadandroid' => 'Download Messenger for Android',
+    'downloadapple' => 'Download Messenger for AppStore'
 ];
