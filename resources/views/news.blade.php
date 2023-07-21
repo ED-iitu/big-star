@@ -6,10 +6,10 @@
         <section class="breadcrumbs">
             <div class="container">
                 <ol>
-                    <li><a href="/">Главная</a></li>
+                    <li><a href="/">{{trans('home.main')}}</a></li>
                     <li>{{$news->title}}</li>
                 </ol>
-                <h2>Новости</h2>
+                <h2>{{trans('home.news')}}</h2>
             </div>
         </section>
         <section id="blog" class="blog">
@@ -25,7 +25,7 @@
                             </h2>
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="{{$news->created_at}}">{{$news->created_at}}</time></a></li>
                                 </ul>
                             </div>
                             <div class="entry-content">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="sidebar">
-                            <h3 class="sidebar-title">Другие новости</h3>
+                            <h3 class="sidebar-title">{{trans('home.othernews')}}</h3>
                             <div class="sidebar-item recent-posts">
                                 @if(!empty($AllNews))
                                     @foreach($AllNews as $post)

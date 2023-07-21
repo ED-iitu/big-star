@@ -21,16 +21,16 @@
             <div class="card">
                 <div class="list-group list-group-flush" role="tablist">
                     <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account" role="tab">
-                        Мои данные
+                        {{trans('home.myinfo')}}
                     </a>
                     <a class="list-group-item list-group-item-action" data-toggle="list" href="#password" role="tab">
-                        Сменить пароль
+                        {{trans('home.changepassword')}}
                     </a>
                     <a class="list-group-item list-group-item-action" data-toggle="list" href="#transaction" role="tab">
-                        Транзакции
+                        {{trans('home.transactions')}}
                     </a>
                     <a class="list-group-item list-group-item-action" data-toggle="list" href="#withdraw" role="tab">
-                        Вывод денег
+                        {{trans('home.withdraw')}}
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Мои данные</h5>
+                            <h5 class="card-title mb-0">{{trans('home.myinfo')}}</h5>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{route('profile.updateProfile')}}" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="inputUsername">ФИО</label>
+                                            <label for="inputUsername">{{trans('home.fio')}}</label>
                                             <input type="text" class="form-control form-control-lg" id="inputUsername" placeholder="ФИО" name="name" value="{{Auth::user()->name}}">
                                         </div>
                                         <div class="form-group mt-10">
@@ -58,7 +58,7 @@
                                             <input type="text" class="form-control form-control-lg" id="inputUsername" name="email" placeholder="E-mail" value="{{Auth::user()->email}}">
                                         </div>
                                         <div class="form-group mt-10">
-                                            <label for="inputUsername">Телефон</label>
+                                            <label for="inputUsername">{{trans('home.phone')}}</label>
                                             <input type="text" class="form-control form-control-lg" id="inputUsername" name="phone" placeholder="Телефон" value="{{Auth::user()->phone}}">
                                         </div>
                                     </div>
@@ -67,38 +67,38 @@
                                             <img src="{{asset('/storage/' . Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
                                             <label class="input-file mt-10">
                                                 <input type="file" name="avatar">		
-                                                <span class="col-lg-12">Выбрать фотографию</span>
+                                                <span class="col-lg-12">{{trans('home.choosephoto')}}</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-20">Сохранить изменения</button>
+                                <button type="submit" class="btn btn-primary mt-20">{{trans('home.save')}}</button>
                             </form>
                         </div>
                     
                         <div class="card-body">
                             <form>
                                 <div class="form-group">
-                                    <h4>Ваш баланс:</h3>
+                                    <h4>{{trans('home.balance')}}</h3>
                                     <span class="fw-bold">{{ Auth::user()->wallet->amount }}</span>
                                 </div>
                                 <div class="form-group mt-20">
-                                    <h4>Ваши купленные пакеты</h4>
+                                    <h4>{{trans('home.boughtpackages')}}</h4>
 
                                     @if(count(Auth::user()->pockets) > 0)
                                         @foreach(Auth::user()->pockets as $key => $pocket)
                                             <p class="fw-bold">{{$key + 1}}: {{$pocket->title}}</p>
                                         @endforeach
                                     @else
-                                        <p>У вас нет купленных пакетов</p>
+                                        <p>{{trans('home.nopackages')}}</p>
                                     @endif
                                 </div>
                                 <div class="form-group mt-20">
-                                    <h4>Ссылка для приглашения:</h4>
+                                    <h4>{{trans('home.invitelink')}}</h4>
                                     <a href="https://big-star.kz/register?invite_code={{Auth::user()->invite_code}}">https://big-star.kz/register?invite_code={{Auth::user()->invite_code}}</a>
                                 </div>
                                 <div class="form-group mt-20">
-                                    <h4>Иерархия приглашения пользователей</h4>
+                                    <h4>{{trans('home.historyofinviment')}}</h4>
 
                                     @if(count($usersList) > 0)
                                         <?php $count = count($usersList); ?>
@@ -107,7 +107,7 @@
                                             <span class="fw-bold"> {{$user->name}} @if($count != 0) ---> @else  @endif </span>
                                         @endforeach
                                     @else
-                                        <p>Вас никто не приглашал</p>
+                                        <p>{{trans('home.noinvite')}}</p>
                                     @endif
                                 </div>
                             </form>
@@ -120,24 +120,24 @@
                 <div class="tab-pane fade" id="password" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Смена пароля</h5>
+                            <h5 class="card-title mb-0">{{trans('home.changepassword')}}</h5>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{route('profile.updatePassword')}}">
                                 @csrf
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Текущий пароль</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.cureentpassword')}}</label>
                                     <input type="password" class="form-control" id="inputPasswordCurrent" name="currentPassword">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordNew">Новый пароль</label>
+                                    <label for="inputPasswordNew">{{trans('home.newpassword')}}</label>
                                     <input type="password" class="form-control" id="inputPasswordNew" name="password">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordNew2">Подтвердите новый пароль</label>
+                                    <label for="inputPasswordNew2">{{trans('home.repassword')}}</label>
                                     <input type="password" class="form-control" id="inputPasswordNew2" name="password_confirmation">
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-20">Сохранить</button>
+                                <button type="submit" class="btn btn-primary mt-20">{{trans('home.saves')}}</button>
                             </form>
 
                         </div>
@@ -148,16 +148,16 @@
                 <div class="tab-pane fade" id="transaction" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Транзакции</h5>
+                            <h5 class="card-title mb-0">{{trans('home.transactions')}}</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tbody><tr>
-                                        <th>Тип транзакции</th>
-                                        <th>Стоимость</th>
-                                        <th>Дата</th>
-                                        <th>Статус</th>
+                                        <th>{{trans('home.typetransactions')}}</th>
+                                        <th>{{trans('home.amount')}}</th>
+                                        <th>{{trans('home.date')}}</th>
+                                        <th>{{trans('home.status')}}</th>
                                     </tr>
                                     @if(count(Auth::user()->transactions) > 0)
                                         @foreach(Auth::user()->transactions as $transaction)
@@ -178,7 +178,7 @@
                                             </tr>
                                         @endforeach
                                     @else
-                                        <p>Нет транзакций</p>
+                                        <p>{{trans('home.notransactions')}}</p>
                                     @endif
                                     </tbody></table>
                             </div>
@@ -189,49 +189,49 @@
                 <div class="tab-pane fade" id="withdraw" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Вывод денег</h5>
+                            <h5 class="card-title mb-0">{{trans('home.withdraw')}}</h5>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{route('user.createWithdraw')}}">
                                 @csrf
                                 <div class="form-group">
                                     <input type="radio" id="fiz" name="organization_type" value="1">
-                                    <label for="fiz">Физ лицо</label>
+                                    <label for="fiz">{{trans('home.fiz')}}</label>
                                     <input type="radio" id="ur" name="organization_type" value="2" class="ml-10">
-                                    <label for="ur">Юр лицо</label>
+                                    <label for="ur">{{trans('home.ur')}}</label>
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Номер карты / счета</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.cardnumber')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="card_no">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Наименование банка</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.namebank')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="bank_title">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Телефон</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.phone')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="phone">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Сумма</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.summa')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="amount">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Страна</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.country')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="country">
                                 </div>
                                 <div class="form-group mt-10">
-                                    <label for="inputPasswordCurrent">Город</label>
+                                    <label for="inputPasswordCurrent">{{trans('home.city')}}</label>
                                     <input type="text" class="form-control" id="inputPasswordCurrent" name="city">
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-20">Создать заявку</button>
+                                <button type="submit" class="btn btn-primary mt-20">{{trans('home.createapplication')}}</button>
                             </form>
 
                         </div>
                     </div>
                     <div class="card mt-5">
                         <div class="card-body">
-                            <h5 class="card-title">Запросы на вывод</h5>
+                            <h5 class="card-title">{{trans('home.requested')}}</h5>
                             <div>
                                 @if(count($withdraw) > 0)
                                     <div class="table-responsive">
@@ -251,7 +251,7 @@
                                             </tbody></table>
                                     </div>
                                 @else
-                                    У вас нет заявок на вывод
+                                    {{trans('home.norequested')}}
                                 @endif
                             </div>
                         </div>

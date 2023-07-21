@@ -4,10 +4,10 @@
     <script src="https://widget.cloudpayments.kz/bundles/cloudpayments.js"></script>
 
     <main id="main">
-        <section id="pricing" class="pricing section-bg vh-100">
+        <section id="pricing" class="pricing section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Покупка пакета</h2>
+                    <h2>{{trans('home.paymentprocess')}}</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group mt-10">
-                                        <small>Кто пригласил?</small>
+                                        <small>{{trans('home.whoinveted')}}</small>
                                         <select class="form-control form-control-lg select2" id="registered_from_value">
                                             @foreach (\App\User::getAll() as $user)
                                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -36,7 +36,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group mt-10">
-                                        <small>Презентер</small>
+                                        <small>{{trans('home.presenter')}}</small>
                                         <select class="form-control form-control-lg select2" id="presenter" name="presenter">
                                             @foreach (\App\User::getPresenters() as $user)
                                                 <option value="{{ $user->id }}" id="presenter_value">{{ $user->name }}</option>
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" id="payButton" class="btn btn-primary mt-20">Купить пакет</button>
+                            <button type="button" id="payButton" class="btn btn-primary mt-20">{{trans('home.buy')}}</button>
                         </form>
                     </div>
                 </div>

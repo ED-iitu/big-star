@@ -5,7 +5,7 @@
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-9">
-                    <h1 class="mb-4">Сброс пароля</h1>
+                    <h1 class="mb-4">{{trans('home.resetpassword')}}</h1>
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -24,7 +24,7 @@
                             <div class="card-body">
                                 <div class="row align-items-center pt-4 pb-3">
                                     <div class="col-md-3 ps-5">
-                                        <h6 class="mb-0">Введите смс-код</h6>
+                                        <h6 class="mb-0">{{trans('home.smscode')}}</h6>
                                     </div>
                                 <div class="col-md-9 pe-5">
                                     <input id="code" type="text" class="form-control form-control-lg @error('code') is-invalid @enderror" name="code" required autocomplete="email" autofocus>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="row align-items-center py-3">
                                 <div class="col-md-3 ps-5">
-                                    <h6 class="mb-0">Новый пароль</h6>
+                                    <h6 class="mb-0">{{trans('home.newpassword')}}</h6>
                                 </div>
                                 <div class="col-md-9 pe-5">
                                     <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -52,7 +52,7 @@
                             </div>
                             <div class="row align-items-center py-3">
                                 <div class="col-md-3 ps-5">
-                                    <h6 class="mb-0">Подтвердите пароль</h6>
+                                    <h6 class="mb-0">{{trans('home.repassword')}}</h6>
                                 </div>
                                 <div class="col-md-9 pe-5">
                                 <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" required autocomplete="new-password">
