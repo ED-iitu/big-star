@@ -4,7 +4,7 @@
     <script src="https://widget.cloudpayments.kz/bundles/cloudpayments.js"></script>
 
     <main id="main">
-        <section id="pricing" class="pricing section-bg vh-80">
+        <section id="pricing" class="pricing section-bg vh-100">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Покупка пакета</h2>
