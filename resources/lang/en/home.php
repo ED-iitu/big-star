@@ -91,5 +91,17 @@ return [
     'city' => 'City',
     'createapplication' => 'Create an application',
     'requested' => 'Withdrawal requests',
-    'norequested' => 'You have no withdrawal requests'
+    'norequested' => 'You have no withdrawal requests',
+    'faq1' => 'How to start using the application?',
+    'ans1' => 'Before you start using, you need to download the application and then register. Download link: <a href="https://apps.apple.com/kz/app/big-star-messenger/id6443519603" target="_blank">AppStore</a> and <a href="https://play.google.com/store/apps/details?id=com.bigstar.real&hl=ru&gl=US" target="_blank">Play Market</a><br> After downloading, follow the instructions indicated in the application, after successfully registering, you can fully enjoy all the functions of the application.',
+    'faq2' => 'How to advertise within the app?',
+    'ans2' => 'To submit an advertising campaign within the messenger, you can go to the Settings - Advertising section. More detailed instructions in <a href="/#portfolio">our video</a>',
+    'faq3' => 'How to get a share of income with us?',
+    'ans3' => 'By registering on this site, you can choose a package and purchase it, the cost of the package and the share of income depends on the package chosen. <a href="/#pricing">View Packages</a>',
+    'faq4' => 'How to buy a package?',
+    'ans4' => 'After successful registration, go to the <a href="/#pricing">Packages</a> section, select the appropriate package and pay. The package will be attached to your account',
+    'faq5' => 'How and when will I receive money?',
+    'ans5' => 'According to our regulations, we will credit a share of income to your balance once a month, from the total income of the application, the amount of receipt depends on your purchased package.',
+    'faq6' => 'How to receive / withdraw money?',
+    'ans6' => 'To receive / withdraw money, you need to log in and go to the Profile - Withdrawal of money section and apply for a withdrawal of money. After processing your application by the manager, we will credit funds to your account (card)'
 ];

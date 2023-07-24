@@ -91,5 +91,17 @@ return [
     'city' => 'Şehir',
     'createapplication' => 'Bir uygulama oluştur',
     'requested' => 'Para çekme talepleri',
-    'norequested' => 'Para çekme talebiniz yok'
+    'norequested' => 'Para çekme talebiniz yok',
+    'faq1' => 'Uygulamayı kullanmaya nasıl başlanır?',
+    'ans1' => 'Kullanmaya başlamadan önce uygulamayı indirmeniz ve ardından kayıt olmanız gerekmektedir. İndirme bağlantısı: <a href="https://apps.apple.com/kz/app/big-star-messenger/id6443519603" target="_blank">AppStore</a> ve <a href="https://play.google.com/store/apps/details?id=com.bigstar.real&hl=ru&gl=US" target="_blank">Play Market</a><br>de belirtilen talimatları izleyin. Uygulama, başarılı bir şekilde kaydolduktan sonra, uygulamanın tüm fonksiyonlarını tam olarak kullanabilirsiniz.',
+    'faq2' => 'Uygulama içinde nasıl reklam verilir?',
+    'ans2' => 'Messenger içinde bir reklam kampanyası göndermek için Ayarlar - Reklamlar bölümüne gidebilirsiniz. <a href="/#portfolio">Videomuzda</a> daha ayrıntılı talimatlar',
+    'faq3' => 'Bizimle gelir payı nasıl alınır?',
+    'ans3' => 'Bu siteye kayıt olarak bir paket seçip satın alabilirsiniz, paketin maliyeti ve gelir payı seçilen pakete bağlıdır. <a href="/#pricing">Paketleri Görüntüle</a>',
+    'faq4' => 'Bir paket nasıl satın alınır?',
+    'ans4' => 'Başarılı kayıttan sonra <a href="/#pricing">Paketler</a> bölümüne gidin, uygun paketi seçin ve ödeme yapın. Paket hesabınıza eklenecek',
+    'faq5' => 'Parayı nasıl ve ne zaman alacağım?',
+    'ans5' => 'Yönetmeliklerimize göre, uygulamanın toplam gelirinden ayda bir kez bakiyenize bir gelir payı yatıracağız, makbuz miktarı satın aldığınız pakete bağlıdır.',
+    'faq6' => 'Para nasıl alınır / çekilir?',
+    'ans6' => 'Para almak / çekmek için giriş yapmanız ve Profil - Para Çekme bölümüne gitmeniz ve para çekme başvurusunda bulunmanız gerekir. Başvurunuzu yönetici tarafından işleme koyduktan sonra, hesabınıza (kartınıza) para yatıracağız'
 ];
