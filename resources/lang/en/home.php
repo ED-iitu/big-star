@@ -103,5 +103,7 @@ return [
     'faq5' => 'How and when will I receive money?',
     'ans5' => 'According to our regulations, we will credit a share of income to your balance once a month, from the total income of the application, the amount of receipt depends on your purchased package.',
     'faq6' => 'How to receive / withdraw money?',
-    'ans6' => 'To receive / withdraw money, you need to log in and go to the Profile - Withdrawal of money section and apply for a withdrawal of money. After processing your application by the manager, we will credit funds to your account (card)'
+    'ans6' => 'To receive / withdraw money, you need to log in and go to the Profile - Withdrawal of money section and apply for a withdrawal of money. After processing your application by the manager, we will credit funds to your account (card)',
+    'public_offer' => 'Public offer',
+    'info_onlinepayments' => 'Information about online payments'    
 ];

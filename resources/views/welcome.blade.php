@@ -284,12 +284,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                                        {{trans('home.faq1')}}
+                                        {!! trans('home.faq1') !!}
                                     </button>
                                 </h2>
                                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        {{trans('home.ans1')}}
+                                        {!! trans('home.ans1') !!} 
                                     </div>
                                 </div>
                             </div>
@@ -297,12 +297,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                                        {{trans('home.faq2')}}
+                                        {!! trans('home.faq2') !!}
                                     </button>
                                 </h2>
                                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        {{trans('home.ans2')}}
+                                        {!! trans('home.ans2') !!}
                                     </div>
                                 </div>
                             </div>
@@ -310,12 +310,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                                        {{trans('home.faq3')}}
+                                        {!! trans('home.faq3') !!}
                                     </button>
                                 </h2>
                                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        {{trans('home.ans3')}}
+                                        {!! trans('home.ans3') !!}
                                     </div>
                                 </div>
                             </div>
@@ -327,12 +327,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
-                                        {{trans('home.faq4')}}
+                                        {!! trans('home.faq4') !!}
                                     </button>
                                 </h2>
                                 <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        {{trans('home.ans4')}}
+                                        {!! trans('home.ans4') !!}
                                     </div>
                                 </div>
                             </div>
@@ -340,12 +340,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
-                                        {{trans('home.faq5')}}
+                                        {!! trans('home.faq5') !!}
                                     </button>
                                 </h2>
                                 <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        {{trans('home.ans5')}}
+                                        {!! trans('home.ans5') !!}
                                     </div>
                                 </div>
                             </div>
@@ -353,12 +353,12 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
-                                        {{trans('home.faq6')}}
+                                        {!! trans('home.faq6') !!}
                                     </button>
                                 </h2>
                                 <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                     <div class="accordion-body">
-                                        {{trans('home.ans6')}}
+                                        {!! trans('home.ans6') !!}
                                     </div>
                                 </div>
                             </div>
@@ -404,14 +404,14 @@
                                 <div class="info-box">
                                     <i class="bi bi-envelope"></i>
                                     <h3>Email</h3>
-                                    <p>info@example.com<br>contact@example.com</p>
+                                    <p>bigstarkz@yandex.ru</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info-box">
                                     <i class="bi bi-clock"></i>
                                     <h3>{{trans('home.worktime')}}</h3>
-                                    <p>{{trans('home.weekdays')}}<br>9:00 - 18:00</p>
+                                    <p>{{trans('home.weekdays')}}, 9:00 - 18:00</p>
                                 </div>
                             </div>
                         </div>

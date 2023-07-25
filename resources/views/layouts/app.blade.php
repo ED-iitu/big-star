@@ -38,12 +38,12 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto active" href="/">{{trans('home.main')}}</a></li>
-            <li><a class="nav-link scrollto" href="/#pricing">{{trans('home.packages')}}</a></li>
-            <li><a class="nav-link scrollto" href="/#app">{{trans('home.app')}}</a></li>
-            <li><a class="nav-link scrollto" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
-            <li><a class="nav-link scrollto" href="/#contact">{{trans('home.contacts')}}</a></li>
-            <li class="dropdown"><a href="#"><span>{{__('languages.' . app()->getLocale())}}</span> <i class="bi bi-chevron-down"></i></a>
+            <li><a class="nav-link active" href="/">{{trans('home.main')}}</a></li>
+            <li><a class="nav-link" href="/#pricing">{{trans('home.packages')}}</a></li>
+            <li><a class="nav-link" href="/#features">{{trans('home.app')}}</a></li>
+            <li><a class="nav-link" href="/#recent-blog-posts">{{trans('home.news')}}</a></li>
+            <li><a class="nav-link" href="/#contact">{{trans('home.contacts')}}</a></li>
+            <li class="dropdown"><a><span>{{__('languages.' . app()->getLocale())}}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="{{route('setLocale', 'ru')}}">Русский</a></li>
                     <li><a href="{{route('setLocale', 'kz')}}">Қазақ</a></li>
@@ -51,7 +51,7 @@
                     <li><a href="{{route('setLocale', 'tr')}}">Türkçe</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>{{Session::get('currency') ?? 'KZT'}}</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a><span>{{Session::get('currency') ?? 'KZT'}}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a href="{{route('setCurrency', 'KZT')}}">KZT</a></li>
                 <li><a href="{{route('setCurrency', 'USD')}}">USD</a></li>
@@ -100,16 +100,14 @@
                             <span>BigStar</span>
                         </a>
                         <div class="col-lg-12 col-md-12 footer-contact text-center text-md-start">
-                            <p>
+                            <p class="text-left">
                                 <strong>{{trans('home.adress')}}:</strong> {{trans('home.kzadress')}}<br>
                                 <strong>{{trans('home.phone')}}:</strong> {{trans('home.kzphone')}} 
                             </p>
                         </div>
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=77711768679" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/bigstar_kz/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bi bi-instagram"></i></a>
                         </div>
                     </div>
 
@@ -135,6 +133,9 @@
                                 <li><i class="bx bx-chevron-right"></i><a href="{{route('register')}}">{{trans('home.create')}}</a></li>
                                 <li><i class="bx bx-chevron-right"></i><a href="{{route('login')}}">{{trans('home.login')}}</a></li>
                             @endif
+                            
+                            <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/public_offer.pdf')}}" target="_blank">{{trans('home.public_offer')}}</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/dogovor.pdf')}}" target="_blank">{{trans('home.info_onlinepayments')}}</a></li>
                         </ul>
                     </div>
                 </div>

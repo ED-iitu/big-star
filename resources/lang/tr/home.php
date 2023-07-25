@@ -103,5 +103,7 @@ return [
     'faq5' => 'Parayı nasıl ve ne zaman alacağım?',
     'ans5' => 'Yönetmeliklerimize göre, uygulamanın toplam gelirinden ayda bir kez bakiyenize bir gelir payı yatıracağız, makbuz miktarı satın aldığınız pakete bağlıdır.',
     'faq6' => 'Para nasıl alınır / çekilir?',
-    'ans6' => 'Para almak / çekmek için giriş yapmanız ve Profil - Para Çekme bölümüne gitmeniz ve para çekme başvurusunda bulunmanız gerekir. Başvurunuzu yönetici tarafından işleme koyduktan sonra, hesabınıza (kartınıza) para yatıracağız'
+    'ans6' => 'Para almak / çekmek için giriş yapmanız ve Profil - Para Çekme bölümüne gitmeniz ve para çekme başvurusunda bulunmanız gerekir. Başvurunuzu yönetici tarafından işleme koyduktan sonra, hesabınıza (kartınıza) para yatıracağız',
+    'public_offer' => 'halka arz',
+    'info_onlinepayments' => 'Çevrimiçi ödemeler hakkında bilgi'
 ];
