@@ -57,11 +57,6 @@ h6 {
   font-weight: bold;
 }
 
-.youtube_video {
-  width: 600px !important;
-  height: 350px !important;
-}
-
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -105,10 +100,6 @@ section {
   .card form .px-5 {
     padding-left: 0!important;
     padding-right: 0!important;
-  }
-  .youtube_video {
-    width: 350px !important; 
-    height: 300px !important;
   }
 }
 
