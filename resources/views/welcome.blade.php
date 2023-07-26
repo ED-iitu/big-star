@@ -214,7 +214,7 @@
                     @if(count($videos) > 0)
                         @foreach($videos as $video)
                             <div class="col-lg-6 col-md-6 portfolio-item {{$video->type ?? '.filter-app'}}">
-                                <iframe width="600" height="350" src="{{$video->link}}" title="{{$video->title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe class="youtube_video" src="{{$video->link}}" title="{{$video->title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                         @endforeach
                     @endif
