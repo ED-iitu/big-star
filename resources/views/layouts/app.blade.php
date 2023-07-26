@@ -134,8 +134,9 @@
                                 <li><i class="bx bx-chevron-right"></i><a href="{{route('login')}}">{{trans('home.login')}}</a></li>
                             @endif
                             
+                            <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/policy.pdf')}}">{{trans('home.policy')}}</a></li>
                             <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/public_offer.pdf')}}">{{trans('home.public_offer')}}</a></li>
-                                <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/dogovor.pdf')}}">{{trans('home.info_onlinepayments')}}</a></li>
+                            <li><i class="bx bx-chevron-right"></i><a href="{{asset('assets/doc/dogovor.pdf')}}">{{trans('home.info_onlinepayments')}}</a></li>
                         </ul>
                     </div>
                 </div>
