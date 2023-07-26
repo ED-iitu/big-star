@@ -58,8 +58,8 @@ h6 {
 }
 
 .youtube_video {
-  width: 600px;
-  width: 350px;
+  width: 600px !important;
+  height: 350px !important;
 }
 
 /*--------------------------------------------------------------
@@ -107,8 +107,8 @@ section {
     padding-right: 0!important;
   }
   .youtube_video {
-    width: 350px;
-    height: 300px;
+    width: 350px !important; 
+    height: 300px !important;
   }
 }
 
