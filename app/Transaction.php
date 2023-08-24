@@ -23,8 +23,7 @@ class Transaction extends Model
         'sum'
     ];
 
-    public function getStatusAttribute($status)
-    {
+    public static function getStatusName($status) {
         switch ($status) {
             case 0:
                 return 'В обработке';
@@ -37,7 +36,7 @@ class Transaction extends Model
         }
     }
 
-    public function getTypeAttribute($type)
+    public static function getTypeName($type)
     {
         switch ($type) {
             case 1:

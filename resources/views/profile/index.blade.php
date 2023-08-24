@@ -66,7 +66,7 @@
                                         <div class="text-center mt-10">
                                             <img src="{{asset('/storage/' . Auth::user()->avatar)}}" class="rounded-circle img-responsive mt-2" width="128" height="128">
                                             <label class="input-file mt-10">
-                                                <input type="file" name="avatar">		
+                                                <input type="file" name="avatar">
                                                 <span class="col-lg-12">{{trans('home.choosephoto')}}</span>
                                             </label>
                                         </div>
@@ -75,7 +75,7 @@
                                 <button type="submit" class="btn btn-primary mt-20">{{trans('home.save')}}</button>
                             </form>
                         </div>
-                    
+
                         <div class="card-body">
                             <form>
                                 <div class="form-group">
@@ -162,7 +162,7 @@
                                     @if(count(Auth::user()->transactions) > 0)
                                         @foreach(Auth::user()->transactions as $transaction)
                                             <tr>
-                                                <td>{{$transaction->description ?? $transaction->type}}</td>
+                                                <td>{{$transaction->description ?? \App\Transaction::getTypeName($transaction->type)}}</td>
                                                 @if($transaction->type == 'Вывод')
                                                     <td class="align-middle" style="color: red">
                                                         - {{$transaction->sum}}
@@ -174,7 +174,7 @@
                                                 @endif
 
                                                 <td>{{$transaction->created_at}}</td>
-                                                <td>{{$transaction->status}}</td>
+                                                <td>{{ \App\Transaction::getStatusName($transaction->status)}}</td>
                                             </tr>
                                         @endforeach
                                     @else
