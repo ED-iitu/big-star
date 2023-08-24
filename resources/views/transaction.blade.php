@@ -5,31 +5,38 @@
         <section id="pricing" class="pricing section-bg mt-5">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>{{trans('home.paymentprocess')}}</h2>
+                    <h1>{{trans('home.paymentprocess')}}</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="box">
+                        <h2>Сканируйте QR для оплаты</h2>
+                        <div class="box mt-2" style="display: flex; justify-content: center;">
+                            <img src="{{asset('/assets/img/kaspi.jpeg')}}" alt="" style="width: 400px">
+                        </div>
+                        <div class="box mt-2">
                             <h3>{{$package->title}}</h3>
                             {{intval($package->price * $currencyData[Session::get('currency')])}}
                             <sup> {{Session::get('currency')}}</sup>
                             <ul>
                                 <li>{{$package->description}}</li>
                             </ul>
-                            <h4>Реквизиты для оплаты</h4>
-                            <ul>
-                                <li>Телефон: 87717469953</li>
-                                <li>Номер карты: 0000 0000 0000 0000</li>
-                                <li>Номер счета: 0000 0000 0000 0000</li>
-                            </ul>
                         </div>
-                        <div class="box mt-2" >
-                            <img src="{{asset('/assets/img/kaspi.webp')}}" alt="" style="width: 400px;">
+                        <div class="box mt-2">
+                            <h3>Реквизиты для оплаты</h3>
+                            <div>
+                                Компания: ТОО "BIG STAR FOR EVERYONE"
+                                Адрес: Казахстан, Алматы, улица Римского-Корсакова, дом 23
+                                БИН (ИИН): 210440008697
+                                Банк: АО "Kaspi Bank"
+                                КБе: 17
+                                БИК: CASPKZKA
+                                Номер счёта: KZ12722S000021920850
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-8 col-md-8 mt-10" data-aos="zoom-in" data-aos-delay="200">
                         <div>
-                            <h4>Прикрепите чек об оплате</h4>
+                            <h4 class="mt-2">Прикрепите чек об оплате</h4>
                         </div>
                         <form id="paymentFormSample" autocomplete="off" method="POST" action="{{route('transaction')}}" enctype="multipart/form-data">
                             @csrf
