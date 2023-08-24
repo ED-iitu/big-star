@@ -38,6 +38,7 @@ Route::group(['middleware'=>'language'],function ()
     Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/news/{id}', [\App\Http\Controllers\HomeController::class, 'getNewsById'])->name('news');
     Route::get('package/{id}', [\App\Http\Controllers\PocketController::class, 'getPackage'])->name('package');
+    Route::post('transaction', [\App\Http\Controllers\PocketController::class, 'createCheckPayment'])->name('transaction');
     Route::post('buy-pocket', [\App\Http\Controllers\PocketController::class, 'buyPocket'])->name('buyPocket');
 
     Route::get('/verify-sms-code', 'Auth\VerificationController@showSMSCodeForm')->name('verify.sms');

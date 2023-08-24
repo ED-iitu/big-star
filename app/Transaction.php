@@ -27,13 +27,13 @@ class Transaction extends Model
     {
         switch ($status) {
             case 0:
-                return 'Создан';
+                return 'В обработке';
             case 1:
                 return "Успешно";
             case 2:
                 return "Ошибка";
             default:
-                return "Создан";
+                return "В обработке";
         }
     }
 
