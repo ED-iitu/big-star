@@ -106,5 +106,8 @@ return [
     'ans6' => 'To receive / withdraw money, you need to log in and go to the Profile - Withdrawal of money section and apply for a withdrawal of money. After processing your application by the manager, we will credit funds to your account (card)',
     'public_offer' => 'Public offer',
     'info_onlinepayments' => 'Information about online payments',
-    'policy' => 'Privacy Policy'  
+    'policy' => 'Privacy Policy',
+    'paymentrekvezity' => 'Payment details',
+    'qrcode' => 'Scan QR for payment',
+    'attachpayment' => 'Attach payment receipt'
 ];

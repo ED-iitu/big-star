@@ -106,5 +106,8 @@ return [
     'ans6' => 'Para almak / çekmek için giriş yapmanız ve Profil - Para Çekme bölümüne gitmeniz ve para çekme başvurusunda bulunmanız gerekir. Başvurunuzu yönetici tarafından işleme koyduktan sonra, hesabınıza (kartınıza) para yatıracağız',
     'public_offer' => 'halka arz',
     'info_onlinepayments' => 'Çevrimiçi ödemeler hakkında bilgi',
-    'policy' => 'Gizlilik Politikası'
+    'policy' => 'Gizlilik Politikası',
+    'paymentrekvezity' => 'Tolem küçükmetresi',
+    'qrcode' => 'Ödeme için QRyi tarayın',
+    'attachpayment' => 'Ödeme makbuzunu ekleyin'
 ];

@@ -9,20 +9,8 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <h2>Сканируйте QR для оплаты</h2>
-                        <div class="box mt-2" style="display: flex; justify-content: center;">
-                            <img src="{{asset('/assets/img/kaspi.jpeg')}}" alt="" style="width: 400px">
-                        </div>
-                        <div class="box mt-2">
-                            <h3>{{$package->title}}</h3>
-                            {{intval($package->price * $currencyData[Session::get('currency')])}}
-                            <sup> {{Session::get('currency')}}</sup>
-                            <ul>
-                                <li>{{$package->description}}</li>
-                            </ul>
-                        </div>
-                        <div class="box mt-2">
-                            <h3>Реквизиты для оплаты</h3>
+                        <div class="box">
+                            <h3>{{trans('home.paymentrekvezity')}}</h3>
                             <div>
                                 Компания: ТОО "BIG STAR FOR EVERYONE"
                                 Адрес: Казахстан, Алматы, улица Римского-Корсакова, дом 23
@@ -33,10 +21,22 @@
                                 Номер счёта: KZ12722S000021920850
                             </div>
                         </div>
+                        <h2 class="mt-2">{{trans('home.qrcode')}}</h2>
+                        <div class="box mt-2" style="display: flex; justify-content: center;">
+                            <img src="{{asset('/assets/img/kaspi.jpeg')}}" alt="" style="width: 400px">
+                        </div>
                     </div>
                     <div class="col-lg-8 col-md-8 mt-10" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="box mt-2">
+                            <h3>{{$package->title}}</h3>
+                            {{intval($package->price * $currencyData[Session::get('currency')])}}
+                            <sup> {{Session::get('currency')}}</sup>
+                            <ul>
+                                <li>{{$package->description}}</li>
+                            </ul>
+                        </div>
                         <div>
-                            <h4 class="mt-2">Прикрепите чек об оплате</h4>
+                            <h4 class="mt-2">{{trans('home.attachpayment')}}</h4>
                         </div>
                         <form id="paymentFormSample" autocomplete="off" method="POST" action="{{route('transaction')}}" enctype="multipart/form-data">
                             @csrf
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" id="payButton" class="btn btn-primary mt-20">Оплатил</button>
+                            <button type="submit" id="payButton" class="btn btn-primary mt-20">{{trans('home.send')}}</button>
                         </form>
                     </div>
                 </div>
