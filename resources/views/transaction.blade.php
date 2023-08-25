@@ -12,13 +12,15 @@
                         <div class="box">
                             <h3>{{trans('home.paymentrekvezity')}}</h3>
                             <div>
-                                Компания: ТОО "BIG STAR FOR EVERYONE"
-                                Адрес: Казахстан, Алматы, улица Римского-Корсакова, дом 23
-                                БИН (ИИН): 210440008697
-                                Банк: АО "Kaspi Bank"
-                                КБе: 17
-                                БИК: CASPKZKA
-                                Номер счёта: KZ12722S000021920850
+                                <span style="font-size: 16px; font-weight: 600;">
+                                    Компания: ТОО "BIG STAR FOR EVERYONE"
+                                    Адрес: Казахстан, Алматы, улица Римского-Корсакова, дом 23
+                                    БИН (ИИН): 210440008697
+                                    Банк: АО "Kaspi Bank"
+                                    КБе: 17
+                                    БИК: CASPKZKA
+                                    Номер счёта: KZ12722S000021920850
+                                </span>
                             </div>
                         </div>
                         <h2 class="mt-2">{{trans('home.qrcode')}}</h2>
@@ -27,7 +29,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 mt-10" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="box mt-2">
+                        <div class="box">
                             <h3>{{$package->title}}</h3>
                             {{intval($package->price * $currencyData[Session::get('currency')])}}
                             <sup> {{Session::get('currency')}}</sup>
