@@ -8,7 +8,7 @@
                     <h1>{{trans('home.paymentprocess')}}</h1>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-7 col-md-7" data-aos="zoom-in" data-aos-delay="200">
                         <div class="box">
                             <h3>{{trans('home.paymentrekvezity')}}</h3>
                             <div>
@@ -26,7 +26,7 @@
                             <img src="{{asset('/assets/img/kaspi.jpeg')}}" alt="" style="width: 400px">
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-8 mt-10" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-5 col-md-5 mt-10" data-aos="zoom-in" data-aos-delay="200">
                         <div class="box mt-2">
                             <h3>{{$package->title}}</h3>
                             {{intval($package->price * $currencyData[Session::get('currency')])}}
