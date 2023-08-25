@@ -28,7 +28,7 @@
                             <img src="{{asset('/assets/img/kaspi.jpeg')}}" alt="" style="width: 400px">
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-5 mt-10" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-5 col-md-5" data-aos="zoom-in" data-aos-delay="200">
                         <div class="box">
                             <h3>{{$package->title}}</h3>
                             {{intval($package->price * $currencyData[Session::get('currency')])}}
@@ -38,7 +38,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="mt-2">{{trans('home.attachpayment')}}</h4>
+                            <h2 class="mt-2">{{trans('home.attachpayment')}}</h2>
                         </div>
                         <form id="paymentFormSample" autocomplete="off" method="POST" action="{{route('transaction')}}" enctype="multipart/form-data">
                             @csrf
